@@ -1,0 +1,9 @@
+{
+  "name": "AUTONOA LABS",
+  "short_name": "AUTONOA LABS",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0b2345",
+  "icons": [{"src":"/autonoa-labs-logo.png","sizes":"1254x1254","type":"image/png"}]
+}
