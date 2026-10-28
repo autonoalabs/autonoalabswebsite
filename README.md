@@ -2,6 +2,8 @@
 
 Open index.html in a browser. The website is static and does not require a build or external logo service.
 
+Visitors can now choose Small business, Growing business, Enterprise or Explore everything. The choice adapts the language, hero, architecture introduction, suggested examples and assessment wording. A Change view bar remains available. Small-business visitors start with three everyday examples and can request the technical detail or full catalogue. The view is retained in a whitelisted URL parameter, without cookies or inferred business data. Assessment answers and all data/approval rules are preserved when switching views. See AUDIENCE-DESIGN.md for the design and validation notes.
+
 The technology section contains 24 example architectures across six categories: cloud and infrastructure, business applications, ERP/CRM/automation, data and analytics, AI and machine learning, and IT operations and security. It starts with six overview cards, supports category filtering, and expands each card into a four-stage system flow and production considerations. Without JavaScript, all 24 examples remain accessible.
 
 ## Files
@@ -20,10 +22,12 @@ Visitors can download the plan as plain text or open an email draft. Answers are
 
 Assessment source: assets/assessment-engine.js (questions, rules and text export), assets/assessment.js (form and results), and assets/assessment.css (responsive design). See ASSESSMENT-DESIGN.md for the design and limitations. Run node --test tools/assessment-engine.test.cjs to check the rules.
 
+Audience source: assets/audience-config.js (copy and suggested examples), assets/audience.js (view switching) and assets/audience.css. Run node --test tools/assessment-engine.test.cjs tools/audience-config.test.cjs to check the configuration and assessment rules.
+
 ## Preview
 
 Run python -m http.server 8765 --bind 127.0.0.1 from this folder, then visit http://127.0.0.1:8765/#blueprints.
 
 ## Validation
 
-Checked the stack library on desktop, tablet and phone; category counts; show-all behavior; disclosure diagrams; local SVG assets; and horizontal overflow. The assessment has eight automated rule checks, plus browser checks for validation, answer retention, exclusive unknown choices, changed results, data-boundary constraints, report download, email draft content, linked stack diagrams and reset. The assessment revision is local and has not been pushed or deployed.
+Checked the stack library on desktop, tablet and phone; category counts; show-all behavior; disclosure diagrams; local SVG assets; and horizontal overflow. The assessment and audience configuration have eleven automated checks, plus browser checks for validation, answer retention, exclusive unknown choices, changed results, data-boundary constraints, report download, email draft content, linked stack diagrams, reset and audience switching. The audience revision is local and has not been pushed or deployed.
