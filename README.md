@@ -1,18 +1,25 @@
-# AUTONOA LABS website prototype
+# AUTONOA LABS website
 
-Open `index.html` directly in a browser. It has no build step or external dependencies.
+Open index.html in a browser. The website is static and does not require a build or external logo service.
 
-## Included
+The technology section contains 24 example architectures across six categories: cloud and infrastructure, business applications, ERP/CRM/automation, data and analytics, AI and machine learning, and IT operations and security. It starts with six overview cards, supports category filtering, and expands each card into a four-stage system flow and production considerations. Without JavaScript, all 24 examples remain accessible.
 
-- `index.html` — responsive full-width homepage with layer tabs, practical cloud and hybrid IT stack examples, and a local, client-side system check.
-- `wireframe-source.png` — the original desktop/mobile composite from the user's Library.
-- `assets/` — high-resolution generated section artwork and inline stack diagrams and vendor wordmarks, mapped in `wireframe-map.md`.
-- `wireframe-map.md` — source breakdown, body/visual map, and fidelity notes.
+## Files
 
-The original low-resolution screenshot crops are retained in `assets/wireframe-crops-original/` for reference only; the webpage does not load them.
+- index.html: homepage and static stack cards.
+- assets/stack-library.css and assets/stack-library.js: responsive stack library.
+- assets/tech-logos/: local SVG logos and a source manifest.
+- assets/stack-catalog.json: readable export of the 24 examples.
+- tools/build_stack_library.py: editable catalogue and generator. Run from the project root with Python to rebuild the static section and catalogue export.
+- tools/download_logos.py: optional helper to restore assets using recorded source URLs.
+- ARCHITECTURE-REFERENCES.md: design references and logo provenance.
 
-The wireframe did not include separate source illustrations. The initial screenshot crops have been replaced with newly generated high-resolution artwork and crisp, scalable blueprint diagrams in the original dark charcoal and gold style, with a compact cream logo badge.
+The system check is a browser-local example; it does not submit data to a server. Stack contact links open an email draft with the selected example. Adapt each architecture to customer requirements, regional availability, security needs, licensing and budget.
 
-## Release review
+## Preview
 
-The stack diagrams show example designs using Microsoft Azure, AWS, SAP, Oracle and related products. They are illustrative patterns; confirm vendor fit, regional availability, security and compliance needs for each customer. The diagnostic runs locally in the browser and does not send selections to a server. The contact button opens a draft email.
+Run python -m http.server 8765 --bind 127.0.0.1 from this folder, then visit http://127.0.0.1:8765/#blueprints.
+
+## Validation
+
+Checked desktop (1440px), tablet (700px) and phone (390px) layouts; category counts; show-all behavior; disclosure diagrams; local SVG assets; and horizontal overflow. JavaScript syntax and local asset references were also checked. Changes have not been pushed or deployed.

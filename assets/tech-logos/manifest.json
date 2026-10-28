@@ -1,0 +1,207 @@
+{
+  "azure": {
+    "name": "Azure",
+    "file": "assets/tech-logos/azure.svg",
+    "source": "https://raw.githubusercontent.com/devicons/devicon/master/icons/azure/azure-original.svg"
+  },
+  "aws": {
+    "name": "AWS",
+    "file": "assets/tech-logos/aws.svg",
+    "source": "https://raw.githubusercontent.com/devicons/devicon/v2.17.0/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+  },
+  "googlecloud": {
+    "name": "Google Cloud",
+    "file": "assets/tech-logos/googlecloud.svg",
+    "source": "https://raw.githubusercontent.com/devicons/devicon/master/icons/googlecloud/googlecloud-original.svg"
+  },
+  "redhat": {
+    "name": "Red Hat",
+    "file": "assets/tech-logos/redhat.svg",
+    "source": "https://raw.githubusercontent.com/devicons/devicon/master/icons/redhat/redhat-original.svg"
+  },
+  "kubernetes": {
+    "name": "Kubernetes",
+    "file": "assets/tech-logos/kubernetes.svg",
+    "source": "https://raw.githubusercontent.com/devicons/devicon/master/icons/kubernetes/kubernetes-original.svg"
+  },
+  "react": {
+    "name": "React",
+    "file": "assets/tech-logos/react.svg",
+    "source": "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
+  },
+  "nodejs": {
+    "name": "Node.js",
+    "file": "assets/tech-logos/nodejs.svg",
+    "source": "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg"
+  },
+  "postgresql": {
+    "name": "PostgreSQL",
+    "file": "assets/tech-logos/postgresql.svg",
+    "source": "https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg"
+  },
+  "dotnet": {
+    "name": ".NET",
+    "file": "assets/tech-logos/dotnet.svg",
+    "source": "https://raw.githubusercontent.com/devicons/devicon/master/icons/dotnetcore/dotnetcore-original.svg"
+  },
+  "sqlserver": {
+    "name": "SQL Server",
+    "file": "assets/tech-logos/sqlserver.svg",
+    "source": "https://raw.githubusercontent.com/devicons/devicon/master/icons/microsoftsqlserver/microsoftsqlserver-original.svg"
+  },
+  "java": {
+    "name": "Java",
+    "file": "assets/tech-logos/java.svg",
+    "source": "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg"
+  },
+  "spring": {
+    "name": "Spring Boot",
+    "file": "assets/tech-logos/spring.svg",
+    "source": "https://raw.githubusercontent.com/devicons/devicon/master/icons/spring/spring-original.svg"
+  },
+  "redis": {
+    "name": "Redis",
+    "file": "assets/tech-logos/redis.svg",
+    "source": "https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original.svg"
+  },
+  "wordpress": {
+    "name": "WordPress",
+    "file": "assets/tech-logos/wordpress.svg",
+    "source": "https://raw.githubusercontent.com/devicons/devicon/master/icons/wordpress/wordpress-original.svg"
+  },
+  "woocommerce": {
+    "name": "WooCommerce",
+    "file": "assets/tech-logos/woocommerce.svg",
+    "source": "https://raw.githubusercontent.com/devicons/devicon/master/icons/woocommerce/woocommerce-original.svg"
+  },
+  "mysql": {
+    "name": "MySQL",
+    "file": "assets/tech-logos/mysql.svg",
+    "source": "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg"
+  },
+  "oracle": {
+    "name": "Oracle",
+    "file": "assets/tech-logos/oracle.svg",
+    "source": "https://raw.githubusercontent.com/devicons/devicon/master/icons/oracle/oracle-original.svg"
+  },
+  "salesforce": {
+    "name": "Salesforce",
+    "file": "assets/tech-logos/salesforce.svg",
+    "source": "https://raw.githubusercontent.com/devicons/devicon/master/icons/salesforce/salesforce-original.svg"
+  },
+  "python": {
+    "name": "Python",
+    "file": "assets/tech-logos/python.svg",
+    "source": "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"
+  },
+  "airflow": {
+    "name": "Apache Airflow",
+    "file": "assets/tech-logos/airflow.svg",
+    "source": "https://raw.githubusercontent.com/devicons/devicon/master/icons/apacheairflow/apacheairflow-original.svg"
+  },
+  "spark": {
+    "name": "Apache Spark",
+    "file": "assets/tech-logos/spark.svg",
+    "source": "https://raw.githubusercontent.com/devicons/devicon/master/icons/apachespark/apachespark-original.svg"
+  },
+  "kafka": {
+    "name": "Apache Kafka",
+    "file": "assets/tech-logos/kafka.svg",
+    "source": "https://raw.githubusercontent.com/devicons/devicon/master/icons/apachekafka/apachekafka-original.svg"
+  },
+  "fastapi": {
+    "name": "FastAPI",
+    "file": "assets/tech-logos/fastapi.svg",
+    "source": "https://raw.githubusercontent.com/devicons/devicon/master/icons/fastapi/fastapi-original.svg"
+  },
+  "pytorch": {
+    "name": "PyTorch",
+    "file": "assets/tech-logos/pytorch.svg",
+    "source": "https://raw.githubusercontent.com/devicons/devicon/master/icons/pytorch/pytorch-original.svg"
+  },
+  "gitlab": {
+    "name": "GitLab",
+    "file": "assets/tech-logos/gitlab.svg",
+    "source": "https://raw.githubusercontent.com/devicons/devicon/master/icons/gitlab/gitlab-original.svg"
+  },
+  "terraform": {
+    "name": "Terraform",
+    "file": "assets/tech-logos/terraform.svg",
+    "source": "https://raw.githubusercontent.com/devicons/devicon/master/icons/terraform/terraform-original.svg"
+  },
+  "prometheus": {
+    "name": "Prometheus",
+    "file": "assets/tech-logos/prometheus.svg",
+    "source": "https://raw.githubusercontent.com/devicons/devicon/master/icons/prometheus/prometheus-original.svg"
+  },
+  "grafana": {
+    "name": "Grafana",
+    "file": "assets/tech-logos/grafana.svg",
+    "source": "https://raw.githubusercontent.com/devicons/devicon/master/icons/grafana/grafana-original.svg"
+  },
+  "keycloak": {
+    "name": "Keycloak",
+    "file": "assets/tech-logos/keycloak.svg",
+    "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/keycloak.svg"
+  },
+  "nginx": {
+    "name": "NGINX",
+    "file": "assets/tech-logos/nginx.svg",
+    "source": "https://raw.githubusercontent.com/devicons/devicon/master/icons/nginx/nginx-original.svg"
+  },
+  "linux": {
+    "name": "Linux",
+    "file": "assets/tech-logos/linux.svg",
+    "source": "https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg"
+  },
+  "ansible": {
+    "name": "Ansible",
+    "file": "assets/tech-logos/ansible.svg",
+    "source": "https://raw.githubusercontent.com/devicons/devicon/master/icons/ansible/ansible-original.svg"
+  },
+  "sap": {
+    "name": "SAP",
+    "file": "assets/tech-logos/sap.svg",
+    "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/sap.svg"
+  },
+  "n8n": {
+    "name": "n8n",
+    "file": "assets/tech-logos/n8n.svg",
+    "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/n8n.svg"
+  },
+  "snowflake": {
+    "name": "Snowflake",
+    "file": "assets/tech-logos/snowflake.svg",
+    "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/snowflake.svg"
+  },
+  "dbt": {
+    "name": "dbt",
+    "file": "assets/tech-logos/dbt.svg",
+    "source": "https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/static/img/dbt-logo.svg"
+  },
+  "metabase": {
+    "name": "Metabase",
+    "file": "assets/tech-logos/metabase.svg",
+    "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/metabase.svg"
+  },
+  "ollama": {
+    "name": "Ollama",
+    "file": "assets/tech-logos/ollama.svg",
+    "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/ollama.svg"
+  },
+  "mlflow": {
+    "name": "MLflow",
+    "file": "assets/tech-logos/mlflow.svg",
+    "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/mlflow.svg"
+  },
+  "opentelemetry": {
+    "name": "OpenTelemetry",
+    "file": "assets/tech-logos/opentelemetry.svg",
+    "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/opentelemetry.svg"
+  },
+  "docker": {
+    "name": "Docker",
+    "file": "assets/tech-logos/docker.svg",
+    "source": "https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg"
+  }
+}

@@ -1,0 +1,794 @@
+[
+  {
+    "category": "Cloud & infrastructure",
+    "title": "Microsoft Azure Hybrid Cloud",
+    "description": "Connect office systems and cloud apps with one staff sign-in. A good fit for teams already using Microsoft tools.",
+    "logos": [
+      "azure",
+      "dotnet",
+      "sqlserver"
+    ],
+    "steps": [
+      [
+        "Access",
+        "Microsoft Entra ID",
+        "Staff sign in with access checks."
+      ],
+      [
+        "Connect",
+        "VPN / ExpressRoute",
+        "Link the office network to Azure."
+      ],
+      [
+        "Run",
+        "App Service + Azure SQL",
+        "Host business apps and their data."
+      ],
+      [
+        "Operate",
+        "Azure Monitor + Backup",
+        "Track health and restore lost data."
+      ]
+    ],
+    "note": "Plan private network access, separate production from testing, and confirm the regions used for data and backups."
+  },
+  {
+    "category": "Cloud & infrastructure",
+    "title": "AWS Customer App Platform",
+    "description": "Run customer portals, booking systems and mobile backends that need to handle changing demand.",
+    "logos": [
+      "aws",
+      "docker",
+      "postgresql"
+    ],
+    "steps": [
+      [
+        "Protect",
+        "CloudFront + AWS WAF",
+        "Filter and deliver incoming web traffic."
+      ],
+      [
+        "Run",
+        "ALB + Amazon ECS",
+        "Route requests to application containers."
+      ],
+      [
+        "Store",
+        "Amazon RDS + S3",
+        "Keep app records and uploaded files."
+      ],
+      [
+        "Operate",
+        "CloudWatch + AWS Backup",
+        "Monitor services and manage recovery."
+      ]
+    ],
+    "note": "Use multiple availability zones, private databases, managed secrets and tested restore procedures. Use EKS when Kubernetes is needed."
+  },
+  {
+    "category": "Cloud & infrastructure",
+    "title": "Google Cloud Serverless Apps",
+    "description": "Build web services and APIs without maintaining application servers. Useful for new services and uneven workloads.",
+    "logos": [
+      "googlecloud",
+      "python",
+      "postgresql"
+    ],
+    "steps": [
+      [
+        "Access",
+        "HTTPS Load Balancer",
+        "Route requests and apply access rules."
+      ],
+      [
+        "Run",
+        "Cloud Run",
+        "Run an API in managed containers."
+      ],
+      [
+        "Store",
+        "Cloud SQL + Cloud Storage",
+        "Keep business records and files."
+      ],
+      [
+        "Connect",
+        "Pub/Sub + Monitoring",
+        "Process background work and track health."
+      ]
+    ],
+    "note": "Set minimum and maximum instances, protect database connections, and check service availability in the chosen region."
+  },
+  {
+    "category": "Cloud & infrastructure",
+    "title": "Private Cloud with OpenShift",
+    "description": "Run container apps in your own environment or across approved clouds. Useful when location and operating control matter.",
+    "logos": [
+      "redhat",
+      "kubernetes",
+      "ansible"
+    ],
+    "steps": [
+      [
+        "Foundation",
+        "RHEL + network + storage",
+        "Provide the compute and storage base."
+      ],
+      [
+        "Platform",
+        "Red Hat OpenShift",
+        "Schedule and run application containers."
+      ],
+      [
+        "Delivery",
+        "GitOps + Ansible",
+        "Deploy approved changes consistently."
+      ],
+      [
+        "Operations",
+        "Monitoring + backup",
+        "Protect workloads and platform state."
+      ]
+    ],
+    "note": "Allow for platform support, storage resilience, cluster upgrades and a separate recovery location. A cluster alone is not disaster recovery."
+  },
+  {
+    "category": "Business applications",
+    "title": "React and Node.js Web Apps",
+    "description": "A flexible stack for customer portals, booking tools and internal business dashboards.",
+    "logos": [
+      "react",
+      "nodejs",
+      "postgresql"
+    ],
+    "steps": [
+      [
+        "Interface",
+        "React",
+        "Build the screens customers use."
+      ],
+      [
+        "Service",
+        "Node.js API",
+        "Apply business rules and permissions."
+      ],
+      [
+        "Data",
+        "PostgreSQL + Redis",
+        "Store records and cache frequent reads."
+      ],
+      [
+        "Delivery",
+        "Containers + CI/CD",
+        "Release and monitor app changes."
+      ]
+    ],
+    "note": "Keep permissions in the API, validate inputs, limit requests and decide whether Redis is actually needed."
+  },
+  {
+    "category": "Business applications",
+    "title": ".NET Business Systems",
+    "description": "Build staff portals and business applications that fit an existing Microsoft environment.",
+    "logos": [
+      "dotnet",
+      "azure",
+      "sqlserver"
+    ],
+    "steps": [
+      [
+        "Access",
+        "Entra ID",
+        "Control staff and application access."
+      ],
+      [
+        "Application",
+        "ASP.NET Core",
+        "Run business rules and APIs."
+      ],
+      [
+        "Data",
+        "SQL Server / Azure SQL",
+        "Store transactions and business records."
+      ],
+      [
+        "Hosting",
+        "Azure App Service",
+        "Run and monitor the application."
+      ]
+    ],
+    "note": "Choose managed or self-hosted SQL based on compatibility, licensing and recovery needs. Keep app and database access separate."
+  },
+  {
+    "category": "Business applications",
+    "title": "Java and Spring Business Apps",
+    "description": "Support transaction-heavy systems, customer services and integration with older enterprise platforms.",
+    "logos": [
+      "java",
+      "spring",
+      "postgresql"
+    ],
+    "steps": [
+      [
+        "Entry",
+        "API gateway",
+        "Authenticate and route requests."
+      ],
+      [
+        "Services",
+        "Spring Boot",
+        "Run business services and validations."
+      ],
+      [
+        "Transactions",
+        "PostgreSQL",
+        "Keep consistent business records."
+      ],
+      [
+        "Deployment",
+        "Containers + monitoring",
+        "Deploy services and track failures."
+      ]
+    ],
+    "note": "Start with a modular application when possible. Split into microservices only where independent scaling or ownership justifies it."
+  },
+  {
+    "category": "Business applications",
+    "title": "WordPress and WooCommerce",
+    "description": "Launch a product catalogue or online store with a familiar content and order management system.",
+    "logos": [
+      "wordpress",
+      "woocommerce",
+      "mysql"
+    ],
+    "steps": [
+      [
+        "Customers",
+        "CDN + web protection",
+        "Deliver store pages and filter traffic."
+      ],
+      [
+        "Store",
+        "WordPress + WooCommerce",
+        "Manage products, content and orders."
+      ],
+      [
+        "Records",
+        "MySQL + object storage",
+        "Store orders, media and catalogue data."
+      ],
+      [
+        "Payments",
+        "Hosted payment gateway",
+        "Send payment processing to a provider."
+      ]
+    ],
+    "note": "Use supported plugins, secure admin access, test updates and backups, and use a hosted checkout to reduce card-data exposure."
+  },
+  {
+    "category": "ERP, CRM & automation",
+    "title": "SAP and Business Integration",
+    "description": "Connect finance, orders and stock data from SAP to customer apps and other business systems.",
+    "logos": [
+      "sap",
+      "java",
+      "postgresql"
+    ],
+    "steps": [
+      [
+        "System of record",
+        "SAP S/4HANA",
+        "Keep approved business transactions."
+      ],
+      [
+        "Integration",
+        "SAP Integration Suite",
+        "Map and validate approved API messages."
+      ],
+      [
+        "Applications",
+        "Business APIs + Java apps",
+        "Serve portals and connected systems."
+      ],
+      [
+        "Tracking",
+        "Logs + reconciliation",
+        "Check failed and duplicate transactions."
+      ]
+    ],
+    "note": "Use supported SAP APIs and business events. Avoid direct writes to ERP tables; confirm licensing and the integration edition needed."
+  },
+  {
+    "category": "ERP, CRM & automation",
+    "title": "Oracle Business Data Integration",
+    "description": "Connect existing Oracle databases to new portals and reporting tools without replacing the core system.",
+    "logos": [
+      "oracle",
+      "java",
+      "python"
+    ],
+    "steps": [
+      [
+        "Core data",
+        "Oracle Database",
+        "Retain existing business records."
+      ],
+      [
+        "Access",
+        "Approved API / CDC",
+        "Expose permitted data or changes."
+      ],
+      [
+        "Processing",
+        "Java / Python services",
+        "Validate, map and process records."
+      ],
+      [
+        "Use",
+        "Portal / reporting store",
+        "Serve apps without overloading the core."
+      ]
+    ],
+    "note": "Use supported APIs for ERP products. Database replication and change capture need version, licensing and load checks."
+  },
+  {
+    "category": "ERP, CRM & automation",
+    "title": "Salesforce Sales and Service",
+    "description": "Move customer enquiries into sales and service processes, with connections to finance and order systems.",
+    "logos": [
+      "salesforce",
+      "nodejs",
+      "postgresql"
+    ],
+    "steps": [
+      [
+        "Channels",
+        "Website / customer portal",
+        "Capture a lead or service request."
+      ],
+      [
+        "CRM",
+        "Salesforce",
+        "Manage customer and case records."
+      ],
+      [
+        "Connect",
+        "Flow + integration API",
+        "Apply approvals and exchange updates."
+      ],
+      [
+        "Business systems",
+        "ERP + reporting",
+        "Send approved orders and status updates."
+      ]
+    ],
+    "note": "Agree which system owns each record. Design for API limits, duplicate prevention, customer permissions and integration retries."
+  },
+  {
+    "category": "ERP, CRM & automation",
+    "title": "Workflow Automation with n8n",
+    "description": "Connect everyday tasks such as invoice follow-up, approval requests and service ticket routing.",
+    "logos": [
+      "n8n",
+      "postgresql",
+      "python"
+    ],
+    "steps": [
+      [
+        "Trigger",
+        "Form / email / webhook",
+        "Receive a request or system event."
+      ],
+      [
+        "Workflow",
+        "n8n",
+        "Validate inputs and connect approved tools."
+      ],
+      [
+        "Approval",
+        "Human review",
+        "Pause important actions for a decision."
+      ],
+      [
+        "Result",
+        "Business API + audit log",
+        "Record the outcome and failed tasks."
+      ]
+    ],
+    "note": "Protect credentials, verify webhooks, and design safe retries. Use a queue and workers when workload or availability needs grow."
+  },
+  {
+    "category": "Data & analytics",
+    "title": "Cloud Data Warehouse",
+    "description": "Bring sales, finance and operations data together so teams can use consistent business reports.",
+    "logos": [
+      "airflow",
+      "dbt",
+      "snowflake"
+    ],
+    "steps": [
+      [
+        "Sources",
+        "ERP / CRM / business data",
+        "Collect approved business datasets."
+      ],
+      [
+        "Load",
+        "Airflow + ingestion jobs",
+        "Schedule and monitor data movement."
+      ],
+      [
+        "Model",
+        "Snowflake + dbt",
+        "Clean, test and organise reporting tables."
+      ],
+      [
+        "Report",
+        "BI dashboards",
+        "Publish agreed business measures."
+      ]
+    ],
+    "note": "Define data owners, access rules and freshness targets. Apply warehouse usage limits and test financial reporting logic."
+  },
+  {
+    "category": "Data & analytics",
+    "title": "Spark Data Lakehouse",
+    "description": "Process large files, historical records and mixed datasets for analytics and machine learning.",
+    "logos": [
+      "spark",
+      "python",
+      "airflow"
+    ],
+    "steps": [
+      [
+        "Ingest",
+        "Business files + events",
+        "Land approved data in object storage."
+      ],
+      [
+        "Process",
+        "Apache Spark",
+        "Clean and transform large datasets."
+      ],
+      [
+        "Organise",
+        "Delta Lake tables",
+        "Keep versioned analytical tables."
+      ],
+      [
+        "Use",
+        "SQL reports + ML",
+        "Serve governed analysis and model inputs."
+      ]
+    ],
+    "note": "Use a data catalogue, access controls, table maintenance and workload limits. Separate sensitive data and manage retention."
+  },
+  {
+    "category": "Data & analytics",
+    "title": "Kafka Event Processing",
+    "description": "Share order, stock or payment-status changes between systems without making every app wait for the next one.",
+    "logos": [
+      "kafka",
+      "java",
+      "postgresql"
+    ],
+    "steps": [
+      [
+        "Publish",
+        "Business services",
+        "Publish a confirmed business event."
+      ],
+      [
+        "Stream",
+        "Apache Kafka",
+        "Retain and distribute event messages."
+      ],
+      [
+        "Process",
+        "Consumer services",
+        "Validate and process each event."
+      ],
+      [
+        "Update",
+        "Operational databases",
+        "Update views and notify other systems."
+      ]
+    ],
+    "note": "Plan message schemas, ordering, replay and consumer lag. Use idempotent consumers so replay does not create duplicate business actions."
+  },
+  {
+    "category": "Data & analytics",
+    "title": "Practical Business Dashboards",
+    "description": "Give growing businesses clear sales and operations reports without starting with a large data platform.",
+    "logos": [
+      "postgresql",
+      "python",
+      "metabase"
+    ],
+    "steps": [
+      [
+        "Collect",
+        "Business apps + exports",
+        "Collect data on an agreed schedule."
+      ],
+      [
+        "Prepare",
+        "Python jobs",
+        "Validate and clean source records."
+      ],
+      [
+        "Store",
+        "PostgreSQL reporting DB",
+        "Keep reporting separate from live apps."
+      ],
+      [
+        "Visualise",
+        "Metabase",
+        "Share dashboards with role-based access."
+      ]
+    ],
+    "note": "Use read-only reporting access, agree metric definitions and display data freshness. Add a warehouse when scale justifies it."
+  },
+  {
+    "category": "AI & machine learning",
+    "title": "Private Document Assistant",
+    "description": "Let staff search company manuals and policies using models hosted in your own environment.",
+    "logos": [
+      "ollama",
+      "fastapi",
+      "postgresql"
+    ],
+    "steps": [
+      [
+        "Prepare",
+        "Approved documents",
+        "Extract text with document permissions."
+      ],
+      [
+        "Retrieve",
+        "PostgreSQL + pgvector",
+        "Find relevant content the user may access."
+      ],
+      [
+        "Answer",
+        "FastAPI + Ollama",
+        "Generate an answer using retrieved sources."
+      ],
+      [
+        "Review",
+        "Sources + staff feedback",
+        "Show evidence and flag uncertain answers."
+      ]
+    ],
+    "note": "Size compute for the chosen model and concurrent users. Test retrieval, access filtering and answer quality; no answer is guaranteed correct."
+  },
+  {
+    "category": "AI & machine learning",
+    "title": "Azure Document AI Assistant",
+    "description": "Use managed AI and company documents for staff support, with existing Microsoft access controls.",
+    "logos": [
+      "azure",
+      "python",
+      "dotnet"
+    ],
+    "steps": [
+      [
+        "Access",
+        "Entra ID + application",
+        "Verify the user and their permissions."
+      ],
+      [
+        "Retrieve",
+        "Azure AI Search",
+        "Search authorised company content."
+      ],
+      [
+        "Generate",
+        "Azure-hosted model endpoint",
+        "Create a response using retrieved content."
+      ],
+      [
+        "Review",
+        "Citations + evaluation",
+        "Check quality and retain approved logs."
+      ]
+    ],
+    "note": "Confirm model and search availability, data processing terms and region. Use private connectivity where supported and validate document permissions."
+  },
+  {
+    "category": "AI & machine learning",
+    "title": "Google Cloud AI Applications",
+    "description": "Add document search and AI support to customer or staff applications using managed Google Cloud services.",
+    "logos": [
+      "googlecloud",
+      "python",
+      "fastapi"
+    ],
+    "steps": [
+      [
+        "Content",
+        "Cloud Storage",
+        "Keep approved documents and metadata."
+      ],
+      [
+        "Retrieve",
+        "Vector Search",
+        "Find relevant content with access filters."
+      ],
+      [
+        "Generate",
+        "Vertex AI model endpoint",
+        "Produce a grounded response."
+      ],
+      [
+        "Serve",
+        "Cloud Run application",
+        "Show sources, collect feedback and logs."
+      ]
+    ],
+    "note": "Validate the model, retrieval quality, safety rules, regional support and data handling terms before opening access to users."
+  },
+  {
+    "category": "AI & machine learning",
+    "title": "Prediction and ML Serving",
+    "description": "Deploy demand forecasts, risk scores or image classification models with a controlled release process.",
+    "logos": [
+      "pytorch",
+      "mlflow",
+      "fastapi"
+    ],
+    "steps": [
+      [
+        "Prepare",
+        "Versioned training data",
+        "Validate inputs and separate test data."
+      ],
+      [
+        "Train",
+        "PyTorch",
+        "Train and evaluate a suitable model."
+      ],
+      [
+        "Release",
+        "MLflow registry",
+        "Track versions and approve deployment."
+      ],
+      [
+        "Serve",
+        "FastAPI + monitoring",
+        "Return predictions and track quality."
+      ]
+    ],
+    "note": "Compare against a simple baseline. Monitor drift, response time and business impact; keep rollback and retraining procedures."
+  },
+  {
+    "category": "IT operations & security",
+    "title": "Infrastructure and GitOps Delivery",
+    "description": "Build environments and release software through approved, repeatable changes instead of manual server edits.",
+    "logos": [
+      "gitlab",
+      "terraform",
+      "kubernetes"
+    ],
+    "steps": [
+      [
+        "Change",
+        "GitLab repository",
+        "Review code and environment changes."
+      ],
+      [
+        "Provision",
+        "Terraform",
+        "Create approved infrastructure."
+      ],
+      [
+        "Deploy",
+        "CI pipeline + GitOps",
+        "Apply reviewed app changes to Kubernetes."
+      ],
+      [
+        "Operate",
+        "Health checks + rollback",
+        "Observe releases and recover safely."
+      ]
+    ],
+    "note": "Protect deployment credentials and Terraform state. Scan images, separate environments and test database migration rollback plans."
+  },
+  {
+    "category": "IT operations & security",
+    "title": "Monitoring and Service Health",
+    "description": "See application faults, slow requests and infrastructure issues in one place, with alerts for the right team.",
+    "logos": [
+      "opentelemetry",
+      "prometheus",
+      "grafana"
+    ],
+    "steps": [
+      [
+        "Instrument",
+        "Apps + infrastructure",
+        "Produce metrics, logs and traces."
+      ],
+      [
+        "Collect",
+        "OpenTelemetry Collector",
+        "Receive, filter and forward telemetry."
+      ],
+      [
+        "Store",
+        "Prometheus + Loki / Tempo",
+        "Store metrics, logs and traces separately."
+      ],
+      [
+        "Respond",
+        "Grafana + alert routing",
+        "Investigate issues and notify responders."
+      ]
+    ],
+    "note": "Set service targets, useful alert thresholds and retention limits. Remove sensitive fields and control high-cardinality telemetry."
+  },
+  {
+    "category": "IT operations & security",
+    "title": "Identity and Secure App Access",
+    "description": "Give staff one controlled way to access internal applications, with multi-factor sign-in and clear permissions.",
+    "logos": [
+      "keycloak",
+      "nginx",
+      "postgresql"
+    ],
+    "steps": [
+      [
+        "Identity",
+        "Keycloak + staff directory",
+        "Check identity and multi-factor sign-in."
+      ],
+      [
+        "Entry",
+        "NGINX + TLS",
+        "Route encrypted application traffic."
+      ],
+      [
+        "Application",
+        "OIDC / OAuth validation",
+        "Verify tokens and enforce app permissions."
+      ],
+      [
+        "Audit",
+        "Access events + alerts",
+        "Track sign-ins and important actions."
+      ]
+    ],
+    "note": "Single sign-on is one layer of security. Also plan device controls, network restrictions, privileged access and emergency account recovery."
+  },
+  {
+    "category": "IT operations & security",
+    "title": "Backup and Recovery Foundation",
+    "description": "Protect databases and business systems, with a recovery plan the team can actually practise.",
+    "logos": [
+      "linux",
+      "ansible",
+      "postgresql"
+    ],
+    "steps": [
+      [
+        "Protect",
+        "Apps + PostgreSQL",
+        "Identify business systems and recovery order."
+      ],
+      [
+        "Back up",
+        "Database-native backups",
+        "Capture consistent backups and transaction logs."
+      ],
+      [
+        "Isolate",
+        "Encrypted backup storage",
+        "Keep an isolated, immutable copy where supported."
+      ],
+      [
+        "Recover",
+        "Ansible + restore tests",
+        "Rebuild systems and verify restored data."
+      ]
+    ],
+    "note": "Agree recovery time and data-loss targets. Separate backup credentials, keep an offsite copy and schedule full restore exercises."
+  }
+]
