@@ -34,4 +34,15 @@
   });
   controls.hidden = false;
   update();
+  document.addEventListener('autonoa:show-stack', event => {
+    const card = cards.find(c => c.querySelector('h3').textContent === event.detail?.title);
+    if (!card) return;
+    category = card.dataset.stackCategory;
+    update();
+    card.querySelector('details').open = true;
+    const heading = card.querySelector('h3');
+    heading.tabIndex = -1;
+    heading.focus({preventScroll:true});
+    card.scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+  });
 })();

@@ -14,7 +14,11 @@ The technology section contains 24 example architectures across six categories: 
 - tools/download_logos.py: optional helper to restore assets using recorded source URLs.
 - ARCHITECTURE-REFERENCES.md: design references and logo provenance.
 
-The system check is a browser-local example; it does not submit data to a server. Stack contact links open an email draft with the selected example. Adapt each architecture to customer requirements, regional availability, security needs, licensing and budget.
+The assessment is a four-step browser-local questionnaire. It keeps answers during Back/Edit, validates required choices, and uses explicit rules to produce a starting plan, checkpoints and links to relevant stack examples. It does not inspect systems or use a hosted AI model. Unknown answers lead to discovery tasks; data-location choices and human approvals constrain the suggestions.
+
+Visitors can download the plan as plain text or open an email draft. Answers are held in memory only and are cleared by refreshing or starting again. No answers are submitted automatically. Stack contact links also open an email draft. Adapt each architecture to customer requirements, regional availability, security needs, licensing and budget.
+
+Assessment source: assets/assessment-engine.js (questions, rules and text export), assets/assessment.js (form and results), and assets/assessment.css (responsive design). See ASSESSMENT-DESIGN.md for the design and limitations. Run node --test tools/assessment-engine.test.cjs to check the rules.
 
 ## Preview
 
@@ -22,4 +26,4 @@ Run python -m http.server 8765 --bind 127.0.0.1 from this folder, then visit htt
 
 ## Validation
 
-Checked desktop (1440px), tablet (700px) and phone (390px) layouts; category counts; show-all behavior; disclosure diagrams; local SVG assets; and horizontal overflow. JavaScript syntax and local asset references were also checked. Changes have not been pushed or deployed.
+Checked the stack library on desktop, tablet and phone; category counts; show-all behavior; disclosure diagrams; local SVG assets; and horizontal overflow. The assessment has eight automated rule checks, plus browser checks for validation, answer retention, exclusive unknown choices, changed results, data-boundary constraints, report download, email draft content, linked stack diagrams and reset. The assessment revision is local and has not been pushed or deployed.
