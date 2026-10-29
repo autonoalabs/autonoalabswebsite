@@ -3,7 +3,7 @@
 .topbar .inner.wrap{width:100%;max-width:none;margin:0;padding:0 clamp(24px,5vw,88px);gap:30px;height:100%}
 .topbar .brand,.footer .footer-brand{display:inline-flex;align-items:center;justify-content:flex-start;gap:15px;padding:0;border:0;border-radius:0;box-shadow:none;background:none;line-height:1;overflow:visible;white-space:nowrap}
 .topbar .brand{flex:0 0 auto;height:100%}
-.brand .brand-mark{width:70px;height:auto;aspect-ratio:9/5;object-fit:contain;filter:none;mix-blend-mode:normal;flex:0 0 70px}
+.brand .brand-mark{width:70px;height:auto;aspect-ratio:1078/604;object-fit:contain;filter:none;mix-blend-mode:normal;flex:0 0 70px}
 .brand .brand-copy{display:flex;flex-direction:column;align-items:flex-start;gap:7px;line-height:1}
 .brand .brand-name{font-size:19px;font-weight:650;letter-spacing:.115em;color:#ece7de}
 .brand .brand-labs{font-size:9px;font-weight:450;letter-spacing:.51em;color:#bb9564}
