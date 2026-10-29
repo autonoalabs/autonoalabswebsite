@@ -26,15 +26,15 @@
     document.body.dataset.audience=key;
     document.body.classList.remove('show-small-technical');
     technicalToggle.setAttribute('aria-expanded','false');
-    technicalToggle.textContent='Show the technical detail +';
+    technicalToggle.textContent='Show the tools and technical details +';
     if(key!=='all'){
       for(const [field,selector] of Object.entries(mappings))document.querySelector(selector).textContent=profile[field];
       primary.textContent=profile.primary+' →';secondary.textContent=profile.secondary+' →';closing.textContent=profile.closingButton+' →';
       nav.forEach((a,i)=>a.textContent=profile.nav[i]);
       if(key==='small'){
         stackEyebrow.textContent='PRACTICAL BUSINESS IDEAS // START WITH A DAILY NEED';
-        ['<b>YOUR TOOLS</b>Connect what you already use.','<b>YOUR KNOWLEDGE</b>Find useful answers with AI.','<b>YOUR DAILY WORK</b>Make repeat tasks easier.'].forEach((t,i)=>pills[i].innerHTML=t);
-        ['Tools your team can rely on','AI help with your documents','Tasks with team approval','Keep people in control','Connect your daily tools','Make reporting clearer','Follow up on requests','Find your starting point','Protect access to your tools','Plan backup and recovery','Check sensitive-data handling','Report a security issue'].forEach((t,i)=>{if(footerLinks[i])footerLinks[i].textContent=t;});
+        ['<b>YOUR TOOLS</b>Keep your daily tools connected.','<b>YOUR INFORMATION</b>Find what your team needs.','<b>YOUR DAILY WORK</b>Keep tasks and follow-ups moving.'].forEach((t,i)=>pills[i].innerHTML=t);
+        ['Tools your team can rely on','AI help with your documents','Tasks with team approval','Keep people in control','Connect your daily tools','Make reporting clearer','Follow up on requests','Find your starting point','Protect access to your tools','Plan backup and recovery','Plan how private data is handled','Ask about security'].forEach((t,i)=>{if(footerLinks[i])footerLinks[i].textContent=t;});
       }
     }
     choices.querySelectorAll('[data-audience-choice]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.audienceChoice===key)));
@@ -51,7 +51,7 @@
     if(event.target.closest('[data-audience-change]')){current.hidden=true;choices.hidden=false;picker.classList.remove('is-collapsed');picker.querySelector('h2').focus();}
   });
   technicalToggle.addEventListener('click',()=>{
-    const open=document.body.classList.toggle('show-small-technical');technicalToggle.setAttribute('aria-expanded',String(open));technicalToggle.textContent=open?'Hide the technical detail −':'Show the technical detail +';
+    const open=document.body.classList.toggle('show-small-technical');technicalToggle.setAttribute('aria-expanded',String(open));technicalToggle.textContent=open?'Hide the tools and technical details −':'Show the tools and technical details +';
   });
   const init=new URL(location.href).searchParams.get('view');
   apply(init||'all',{writeURL:false,announce:false,collapse:!!init&&Object.hasOwn(profiles,init)});

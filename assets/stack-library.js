@@ -25,10 +25,10 @@
     });
     const visible = cards.filter(card => !card.hidden).length;
     count.textContent = category === 'all'
-      ? audience !== 'all' && !expanded ? `${visible} suggested examples · ${window.AutonoaAudienceConfig.profiles[audience].label}` : `Showing ${visible} of ${cards.length} stacks`
-      : `${matches.length} stacks · ${category}`;
+      ? audience !== 'all' && !expanded ? `${visible} suggested examples · ${window.AutonoaAudienceConfig.profiles[audience].label}` : `Showing ${visible} of ${cards.length} examples`
+      : `${matches.length} examples · ${category}`;
     more.hidden = category !== 'all';
-    moreButton.textContent = expanded ? 'Show suggested examples ↑' : `Explore all ${cards.length} technology stacks ↓`;
+    moreButton.textContent = expanded ? 'Show suggested examples ↑' : `Explore all ${cards.length} system examples ↓`;
     controls.hidden = audience === 'small' && category === 'all' && !expanded;
     controls.querySelectorAll('button').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.stackCategory === category)));
   }
@@ -69,7 +69,7 @@
       card.querySelector('.stack-family').textContent = audience === 'small' ? 'BUSINESS EXAMPLE' : originals[i].family;
       card.querySelector('summary').innerHTML = audience === 'small' ? 'How this works <span aria-hidden="true">+</span>' : originals[i].summary;
     });
-    library.querySelector('.stack-results>span').textContent = audience === 'small' ? 'Open an example to see the tools and steps' : 'Choose a card to see the system flow';
+    library.querySelector('.stack-results>span').textContent = audience === 'small' ? 'Open an example to see the tools and steps' : 'Open an example to see how the tools connect';
     update();
   });
 })();

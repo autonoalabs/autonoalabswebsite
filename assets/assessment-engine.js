@@ -3,23 +3,23 @@
   'use strict';
   const option = (value, label, detail = '') => ({value, label, detail});
   const fields = {
-    goal: {label:'What would you most like to improve?', hint:'Choose your main goal. We will use this to keep the plan focused.', options:[
+    goal: {label:'What would you like to improve first?', hint:'Choose the main problem you want to solve.', options:[
       option('automate','Reduce manual work','Spend less time on repeat tasks.'), option('connect','Connect our systems','Stop copying data between tools.'),
-      option('ai','Use AI with our business knowledge','Help people find and use information.'), option('reports','Get clearer business reports','Make decisions with consistent data.'),
-      option('reliable','Make our IT more reliable','Improve access, backups and service health.'), option('unsure','Help us find a starting point','We want advice before choosing tools.') ]},
-    size: {label:'How many people will use the system?', hint:'Optional. This helps us think about support and rollout.', optional:true, options:[option('small','Up to 25 people'),option('medium','26–100 people'),option('large','More than 100 people'),option('unsure','Not sure yet')]},
+      option('ai','Find and use company information with AI','Help staff search documents and prepare answers.'), option('reports','Get clearer business reports','Bring the right business numbers together.'),
+      option('reliable','Make our IT more reliable','Improve sign-in, backups and system availability.'), option('unsure','Help us find a starting point','We want advice before choosing tools.') ]},
+    size: {label:'How many people will use the system?', hint:'Optional. This helps us plan training and support.', optional:true, options:[option('small','Up to 25 people'),option('medium','26–100 people'),option('large','More than 100 people'),option('unsure','Not sure yet')]},
     environment: {label:'Where do your systems run today?', hint:'Choose the closest match.', options:[option('cloud','Mostly in the cloud','Online services or cloud-hosted apps.'),option('office','Mostly in our office','Our own servers or local software.'),option('hybrid','A mix of both','Office systems connected to cloud tools.'),option('unsure','I am not sure','We can map this out together.')]},
-    systems: {label:'Which tools do you already use?', hint:'Choose all that apply. We aim to work with what you have.', multi:true, options:[option('microsoft','Microsoft 365 / Teams'),option('sap','SAP'),option('erp','Another ERP system'),option('oracle','Oracle'),option('salesforce','Salesforce'),option('crm','Another CRM system'),option('spreadsheets','Excel / spreadsheets'),option('custom','Custom-built software'),option('unsure','Not sure / none of these')]},
+    systems: {label:'Which tools do you already use?', hint:'Choose all that apply. We start by looking at what you already have.', multi:true, options:[option('microsoft','Microsoft 365 / Teams'),option('sap','SAP'),option('erp','Other ERP / business management software'),option('oracle','Oracle'),option('salesforce','Salesforce'),option('crm','Other CRM / customer management software'),option('spreadsheets','Excel / spreadsheets'),option('custom','Software built for our business'),option('unsure','Not sure / none of these')]},
     task: {label:'Which piece of work should we look at first?', hint:'Choose one real process to start with.', options:[option('documents','Finding answers in documents','Policies, manuals or internal guidance.'),option('records','Checking and matching records','Invoices, orders or stock data.'),option('requests','Handling requests and approvals','Tickets, follow-ups or staff approvals.'),option('reporting','Preparing reports','Combining data and updating dashboards.'),option('portal','Running a customer or staff app','A portal, booking service or business app.'),option('unsure','We need help choosing','Identify a useful process first.')]},
-    control: {label:'How should the system work with your team?', hint:'Important decisions need clear owners and approval rules.', options:[option('suggest','Suggest, then let us decide','The team reviews suggestions and acts.'),option('approve','Prepare actions for approval','The system acts only after approval.'),option('bounded','Handle routine steps within limits','Send exceptions and important decisions to people.'),option('unsure','Help us set the right controls','Agree the limits before automating.')]},
-    data: {label:'What kind of data will the process use?', hint:'Choose the most sensitive type involved. No documents or records are needed here.', options:[option('public','Public information','Content anyone is allowed to see.'),option('internal','Internal business information','Staff documents and routine business data.'),option('sensitive','Customer, finance or sensitive data','Records that need extra access and handling checks.'),option('unsure','We need help checking this','Classify the data before choosing a design.')]},
+    control: {label:'How much work should the system do on its own?', hint:'Your team decides which actions need approval and who handles problems.', options:[option('suggest','Make suggestions for our team','People check the suggestion and do the work.'),option('approve','Prepare work, then wait for approval','The system acts only after someone approves.'),option('bounded','Do agreed routine steps automatically','Send problems and important decisions to people.'),option('unsure','Help us decide the right limits','Agree what is allowed before automating.')]},
+    data: {label:'What kind of information will the work use?', hint:'Choose the type that needs the most protection. You do not need to share any documents here.', options:[option('public','Public information','Content anyone is allowed to see.'),option('internal','Internal business information','Company documents and routine business records.'),option('sensitive','Customer, finance or other private records','Information that needs extra care and restricted access.'),option('unsure','We need help checking this','Check the information before choosing a setup.')]},
     location: {label:'Where does your data need to stay?', hint:'Think about storage, backups and AI processing. We will check specific requirements with you.', options:[option('india','India'),option('uae','UAE'),option('saudi','Saudi Arabia'),option('existing','Within our own environment'),option('other','Another country / region'),option('flexible','No fixed location requirement'),option('unsure','We need help deciding')]}
   };
   const steps = [
     {title:'Your goal', description:'Start with the business need.', fields:['goal','size']},
-    {title:'Current setup', description:'Tell us what is already in place.', fields:['environment','systems']},
-    {title:'Daily work', description:'Choose one process and the right level of control.', fields:['task','control']},
-    {title:'Data & priorities', description:'Help us plan around your data and location needs.', fields:['data','location']}
+    {title:'Your tools', description:'Tell us which systems you use today.', fields:['environment','systems']},
+    {title:'Daily work', description:'Choose a task and who should approve it.', fields:['task','control']},
+    {title:'Your data', description:'Tell us how your information should be handled.', fields:['data','location']}
   ];
   function clean(answers = {}) {
     const safe = {};
@@ -55,13 +55,13 @@
     recovery:{index:23,title:'Backup and Recovery Foundation',logos:['linux','ansible','postgresql']}
   };
   const pilots = {
-    documents:{title:'Pilot a document assistant with a small, approved collection.', reason:'Start with one useful source of business knowledge and test answers with the people who use it.', work:'Choose approved documents, keep their access permissions, and test questions with known answers. Show sources and route uncertain answers to staff.', measure:'Track useful answers, source accuracy and questions that still need a person.'},
-    records:{title:'Pilot record matching with a review queue.', reason:'Choose one set of records so you can check the rules and exceptions before extending the process.', work:'Use a copy of one invoice, order or stock dataset. Agree matching rules, highlight differences and keep approval before any write-back.', measure:'Track matching accuracy, review time and incorrect matches. Compare with the current manual process.'},
-    requests:{title:'Pilot one request and approval workflow.', reason:'A small, repeatable workflow lets your team test the handovers and controls.', work:'Map one request from arrival to completion. Add clear ownership, an approval point, safe retries and an exception queue.', measure:'Track handling time, missed requests, exceptions and duplicate actions.'},
-    reporting:{title:'Start with one trusted business dashboard.', reason:'Agree the numbers and their sources before building a larger reporting platform.', work:'Choose one report, agree its measures and update frequency, and compare its output against the source records.', measure:'Track data freshness, reconciliation differences and time spent preparing the report.'},
-    portal:{title:'Scope one useful app journey before building.', reason:'A defined user journey keeps the design and integration work focused.', work:'Choose one user task, confirm access and API needs, then test a small version with its intended users.', measure:'Track task completion, response time, error rate and support requests.'},
-    foundation:{title:'Review the IT foundation before adding new tools.', reason:'You identified reliability as the main goal. Verify access, service health and recovery needs first.', work:'Map critical systems and owners. Check access, monitoring and backup restore evidence, then prioritise the gaps with the team.', measure:'Agree service availability and recovery targets; check monitoring coverage and evidence from a restore exercise.'},
-    discovery:{title:'Start with a short systems and process review.', reason:'There is not enough detail yet to select a useful pilot. A review will help you choose one.', work:'Meet the system owner and one business team. Map tools, data and one slow process, then agree a small pilot and its success measures.', measure:'Finish with an agreed process, owner, baseline and a clear decision on what to try first.'}
+    documents:{title:'Try an AI assistant with a small set of company documents.', reason:'Start with documents your team uses often. Check whether the answers are useful before adding more.', work:'Choose approved documents and keep their access permissions. Test questions with known answers, show the sources and send uncertain answers to staff.', measure:'Check answer accuracy, whether the sources support each answer and how often someone still needs help.'},
+    records:{title:'Try matching one set of business records.', reason:'Start with one type of record so your team can check the matching rules and any differences.', work:'Use a test copy of invoices, orders or stock records. Agree what should match, highlight differences and ask for approval before changing the main system.', measure:'Compare correct and incorrect matches, review time and time spent using the current manual process.'},
+    requests:{title:'Try one request and approval process.', reason:'One familiar process makes it easier to test each step and decide who is responsible.', work:'Follow one request from arrival to completion. Name the person responsible for each step, set approvals and make sure failed steps can be retried without duplicate actions.', measure:'Check completion time, missed requests, failed steps and repeated actions.'},
+    reporting:{title:'Start with one clear business report.', reason:'Agree which numbers matter and where they come from before building more reports.', work:'Choose one report. Agree what the numbers mean and how often they should update. Compare the report with the original records.', measure:'Check when the data was updated, whether the numbers match the source and time spent preparing the report.'},
+    portal:{title:'Plan one useful task for your business app.', reason:'Choose one job a customer or staff member needs to do. This keeps the first version focused.', work:'Agree the task, who can use it and which systems it must connect to. Test a small version with the people who will use it.', measure:'Check whether people can finish the task, how long it takes, errors and requests for help.'},
+    foundation:{title:'Check your IT foundation before adding new tools.', reason:'You chose reliability as the main need. Start with access, system problems and recovery arrangements.', work:'List important systems and who looks after them. Check sign-in, monitoring and evidence that backups can be restored. Agree which gaps to fix first.', measure:'Agree how quickly systems must recover and how much recent data could be lost. Test a restore and check that useful alerts reach the right person.'},
+    discovery:{title:'Start by reviewing your tools and daily work.', reason:'A short review will help you choose a useful first improvement before selecting technology.', work:'Meet the people who use and support your systems. List the tools, information and steps in one slow process, then agree what to try and how to check the result.', measure:'Finish with a clear task, a person responsible and a way to compare the result with how work is done today.'}
   };
   function evaluate(input) {
     const answers = clean(input);
@@ -76,34 +76,34 @@
     const privateBoundary = answers.location === 'existing';
     if (kind === 'documents') {
       if (systems.includes('microsoft') && !privateBoundary) {
-        add('azureAI','An option to review because you already use Microsoft tools. Check model availability and data handling terms.');
-        add('privateAI','An alternative if self-hosting is needed and your team can support the model and hardware.');
+        add('azureAI','An option because you already use Microsoft tools. Check where the AI runs, whether it is available there and how it handles your documents.');
+        add('privateAI','Another option if the AI must run on your own systems. Check hardware needs and who will support it.');
       } else {
-        add('privateAI','An option for a self-hosted pilot. Confirm hardware, document permissions and model suitability.');
-        if (!privateBoundary) add('azureAI','A managed-service alternative to compare after checking data handling and regional support.');
+        add('privateAI','An option for a small trial on your own systems. Check hardware, document access and how well the AI handles your questions.');
+        if (!privateBoundary) add('azureAI','A cloud service to compare after checking data handling and availability in your required location.');
       }
     } else if (['records','requests'].includes(kind)) {
-      if (systems.includes('sap')) add('sap','Review the supported integration path for the ERP you use. SAP-specific tools apply only if your ERP is SAP.');
-      if (systems.includes('oracle')) add('oracle','Review APIs and controlled data access around your existing Oracle systems.');
-      if (systems.includes('salesforce') && shortlist.length < 2) add('crm','A reference if your CRM is Salesforce. For other CRMs, use their supported integration tools.');
-      if (shortlist.length < 2) add('automation','A workflow option to test after confirming connectors, approvals and safe retries.');
+      if (systems.includes('sap')) add('sap','Check the supported connections for your SAP system. Use these tools only if your business software is SAP.');
+      if (systems.includes('oracle')) add('oracle','Check how other software can connect to your Oracle systems with the right permissions.');
+      if (systems.includes('salesforce') && shortlist.length < 2) add('crm','An example for a business using Salesforce. Other customer-management software needs its own supported connections.');
+      if (shortlist.length < 2) add('automation','An option for connecting tasks. Check which tools it can connect, who approves actions and how failed steps are retried.');
     } else if (kind === 'reporting') {
-      add('reports','A smaller reporting setup to consider first, with agreed measures and read-only data access.');
-      if (systems.filter(s => s !== 'unsure').length >= 3 || answers.size === 'large') add('warehouse','A larger option to compare if source count, volume and reporting needs justify the extra operating work.');
+      add('reports','A smaller reporting setup to consider first. Agree the business numbers and let reports read data without changing the original records.');
+      if (systems.filter(s => s !== 'unsure').length >= 3 || answers.size === 'large') add('warehouse','A larger setup to compare if you have many data sources or large amounts of reporting data. Check the extra cost and support work.');
     } else if (kind === 'portal') {
-      add(systems.includes('microsoft') ? 'dotnet' : 'app','A reference application stack. Confirm your team’s skills and the fit with existing APIs before choosing it.');
+      add(systems.includes('microsoft') ? 'dotnet' : 'app','An example set of tools for a business app. Check that it fits your existing software and the skills of the team supporting it.');
     } else if (kind === 'foundation') {
-      add('monitoring','A reference for understanding faults and service health.');
-      add('recovery','A reference for backup isolation and tested recovery procedures.');
+      add('monitoring','An example for tracking system problems and sending alerts to the right team.');
+      add('recovery','An example for protected backup copies and a recovery process the team has tested.');
     }
     const checks = [];
-    if (answers.data === 'sensitive') checks.push('Classify the sensitive records, limit access and use masked or sample data in the pilot. Keep human approval for important customer or financial actions.');
+    if (answers.data === 'sensitive') checks.push('Identify private records, limit who can access them and use sample or masked data in the trial. Keep human approval for important customer or financial actions.');
     if (answers.data === 'unsure') checks.push('Identify the data types and their owners before sharing records with a new service or AI model.');
-    if (answers.control === 'bounded') checks.push('Start automation with tested, low-risk steps. Set limits, keep an audit trail and route exceptions to a person.');
-    if (answers.control === 'suggest') checks.push('Keep the pilot advisory: show suggestions and evidence, and let the team make and carry out decisions.');
-    if (answers.control === 'approve') checks.push('Add an explicit approval gate before changes are applied. Record who approved each important action.');
+    if (answers.control === 'bounded') checks.push('Start with tested, low-risk steps. Set limits, record what happened and send problems to the right person.');
+    if (answers.control === 'suggest') checks.push('Keep the trial to suggestions only. Show the supporting information and let your team decide and do the work.');
+    if (answers.control === 'approve') checks.push('Wait for approval before making changes. Record who approved each important action.');
     if (answers.control === 'unsure') checks.push('Agree which actions need approval, who handles exceptions and how to stop or reverse a change.');
-    if (privateBoundary) checks.push('Keep storage, model processing and backups inside your approved environment. Check integrations for any data leaving that boundary.');
+    if (privateBoundary) checks.push('Keep storage, model processing (where the AI runs) and backups on your approved systems. Check whether any connected tool sends data elsewhere.');
     else if (['india','uae','saudi','other'].includes(answers.location)) checks.push(`Confirm the required hosting location (${label('location',answers.location)}), including backups, AI processing and support access. Check product availability before selecting services.`);
     else if (answers.location === 'unsure') checks.push('Agree data location requirements with the business and relevant policy owners before choosing hosting or AI services.');
     else checks.push('Even with no fixed location requirement, confirm data processing terms, access controls and backup locations.');
@@ -112,19 +112,19 @@
       if (answers[key] === 'unsure' || (Array.isArray(answers[key]) && answers[key].includes('unsure'))) unknowns.push(label(key, 'unsure'));
     }
     const discovery = (answers.environment === 'unsure' || systems.includes('unsure'))
-      ? 'Map your systems, access routes and data owners before choosing integration or hosting tools.'
-      : `Review the ${label('environment',answers.environment).toLowerCase()} setup, current access, supported APIs and recovery arrangements.`;
+      ? 'List your systems, who uses them and who looks after the information before choosing new tools.'
+      : `${{cloud:'Review your cloud services',office:'Review the systems running in your office',hybrid:'Review the connections between your office systems and cloud tools'}[answers.environment]}. Check who has access, how other software can connect and how data can be recovered.`;
     const rollout = answers.size === 'small'
-      ? 'Keep the pilot easy for a small team to support. Agree an owner, a support route and a rollback plan.'
+      ? 'Keep the trial easy for a small team to support. Agree who looks after it, how to get help and how to return to the old process.'
       : answers.size === 'large'
         ? 'Test with a small user group first. Assign business, IT and security owners before extending access.'
         : 'Start with one team and a named owner. Expand only after the results and support process have been reviewed.';
     return {answers,kind,title:pilot.title,reason:pilot.reason,measure:pilot.measure,shortlist:shortlist.slice(0,2),checks,unknowns,
-      phases:[{title:'Check the foundation',text:discovery},{title:kind === 'discovery' ? 'Choose the first pilot' : kind === 'foundation' ? 'Verify the gaps' : 'Prove one use case',text:pilot.work},{title:'Review before expanding',text:rollout}]};
+      phases:[{title:'Check your current setup',text:discovery},{title:kind === 'discovery' ? 'Choose the first improvement' : kind === 'foundation' ? 'Check what needs fixing' : 'Try one process',text:pilot.work},{title:'Review the results before expanding',text:rollout}]};
   }
   function report(plan) {
     const summary = Object.keys(fields).map(k => `${fields[k].label}\n${label(k,plan.answers[k])}`).join('\n\n');
-    return `AUTONOA LABS — YOUR STARTING PLAN\nBased only on the answers you selected; live systems have not been inspected.\n\n${plan.title}\n${plan.reason}\n\nYOUR ANSWERS\n${summary}\n\nNEXT STEPS\n${plan.phases.map((p,i)=>`${i+1}. ${p.title}\n${p.text}`).join('\n\n')}\n\nWHAT TO MEASURE\n${plan.measure}\n\nCHECK BEFORE BUILDING\n${plan.checks.map(t=>'• '+t).join('\n')}\n\nSTACK EXAMPLES TO REVIEW\n${plan.shortlist.length ? plan.shortlist.map(s=>s.title+'\n'+s.why).join('\n\n') : 'Select a use case after the systems and process review.'}\n\nA technical review is needed to confirm the final design, effort and cost.\nContact: contact@autonoalabs.com\n`;
+    return `AUTONOA LABS — YOUR STARTING PLAN\nBased only on the answers you selected; live systems have not been inspected.\n\n${plan.title}\n${plan.reason}\n\nYOUR ANSWERS\n${summary}\n\nNEXT STEPS\n${plan.phases.map((p,i)=>`${i+1}. ${p.title}\n${p.text}`).join('\n\n')}\n\nHOW TO CHECK THE RESULT\n${plan.measure}\n\nCHECK BEFORE BUILDING\n${plan.checks.map(t=>'• '+t).join('\n')}\n\nSYSTEM EXAMPLES TO REVIEW\n${plan.shortlist.length ? plan.shortlist.map(s=>s.title+'\n'+s.why).join('\n\n') : 'Select a use case after the systems and process review.'}\n\nOur team needs to review your systems to confirm the final design, work involved and cost.\nContact: contact@autonoalabs.com\n`;
   }
   const api = {fields,steps,clean,label,missing,evaluate,report};
   if (typeof module !== 'undefined' && module.exports) module.exports = api;

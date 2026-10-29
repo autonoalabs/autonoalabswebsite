@@ -2,7 +2,7 @@
   {
     "category": "Cloud & infrastructure",
     "title": "Microsoft Azure Hybrid Cloud",
-    "description": "Connect office systems and cloud apps with one staff sign-in. A good fit for teams already using Microsoft tools.",
+    "description": "Connect office systems and online apps with one staff sign-in. A useful example for a business that already uses Microsoft tools.",
     "logos": [
       "azure",
       "dotnet",
@@ -30,12 +30,12 @@
         "Track health and restore lost data."
       ]
     ],
-    "note": "Plan private network access, separate production from testing, and confirm the regions used for data and backups."
+    "note": "Confirm where apps, data and backups will be stored. Plan private connections where needed, and keep testing separate from live business work."
   },
   {
     "category": "Cloud & infrastructure",
     "title": "AWS Customer App Platform",
-    "description": "Run customer portals, booking systems and mobile backends that need to handle changing demand.",
+    "description": "Run a customer portal, booking service or business app that can handle busy and quiet periods.",
     "logos": [
       "aws",
       "docker",
@@ -63,12 +63,12 @@
         "Monitor services and manage recovery."
       ]
     ],
-    "note": "Use multiple availability zones, private databases, managed secrets and tested restore procedures. Use EKS when Kubernetes is needed."
+    "note": "Plan for a server or location failure. Protect database access and passwords, monitor the service and test restoring backups."
   },
   {
     "category": "Cloud & infrastructure",
     "title": "Google Cloud Serverless Apps",
-    "description": "Build web services and APIs without maintaining application servers. Useful for new services and uneven workloads.",
+    "description": "Run online forms, booking services and business tools without managing the application servers yourself.",
     "logos": [
       "googlecloud",
       "python",
@@ -96,12 +96,12 @@
         "Process background work and track health."
       ]
     ],
-    "note": "Set minimum and maximum instances, protect database connections, and check service availability in the chosen region."
+    "note": "Set limits on running services and costs. Check database connections and whether each service is available in the required location."
   },
   {
     "category": "Cloud & infrastructure",
     "title": "Private Cloud with OpenShift",
-    "description": "Run container apps in your own environment or across approved clouds. Useful when location and operating control matter.",
+    "description": "Run business apps on your own systems or an approved cloud when you need control over where they run.",
     "logos": [
       "redhat",
       "kubernetes",
@@ -129,12 +129,12 @@
         "Protect workloads and platform state."
       ]
     ],
-    "note": "Allow for platform support, storage resilience, cluster upgrades and a separate recovery location. A cluster alone is not disaster recovery."
+    "note": "Plan who supports the platform, installs updates and manages storage. Keep and test a separate recovery setup."
   },
   {
     "category": "Business applications",
     "title": "React and Node.js Web Apps",
-    "description": "A flexible stack for customer portals, booking tools and internal business dashboards.",
+    "description": "Build a customer portal, booking tool or staff dashboard with screens and features that fit your work.",
     "logos": [
       "react",
       "nodejs",
@@ -162,12 +162,12 @@
         "Release and monitor app changes."
       ]
     ],
-    "note": "Keep permissions in the API, validate inputs, limit requests and decide whether Redis is actually needed."
+    "note": "Check permissions and incoming data in the service that runs the business rules. Add extra tools only when there is a clear need."
   },
   {
     "category": "Business applications",
     "title": ".NET Business Systems",
-    "description": "Build staff portals and business applications that fit an existing Microsoft environment.",
+    "description": "Build staff portals and business software that connect with the Microsoft systems you already use.",
     "logos": [
       "dotnet",
       "azure",
@@ -195,12 +195,12 @@
         "Run and monitor the application."
       ]
     ],
-    "note": "Choose managed or self-hosted SQL based on compatibility, licensing and recovery needs. Keep app and database access separate."
+    "note": "Check database compatibility, licence costs and recovery needs. Keep application access separate from database administration."
   },
   {
     "category": "Business applications",
     "title": "Java and Spring Business Apps",
-    "description": "Support transaction-heavy systems, customer services and integration with older enterprise platforms.",
+    "description": "Build business software for orders, customer services and connections to larger or older systems.",
     "logos": [
       "java",
       "spring",
@@ -228,12 +228,12 @@
         "Deploy services and track failures."
       ]
     ],
-    "note": "Start with a modular application when possible. Split into microservices only where independent scaling or ownership justifies it."
+    "note": "Start with a system your team can support. Separate it into smaller services only when scale or team responsibilities require it."
   },
   {
     "category": "Business applications",
     "title": "WordPress and WooCommerce",
-    "description": "Launch a product catalogue or online store with a familiar content and order management system.",
+    "description": "Set up a product catalogue or online store where your team can manage products, content and orders.",
     "logos": [
       "wordpress",
       "woocommerce",
@@ -261,12 +261,12 @@
         "Send payment processing to a provider."
       ]
     ],
-    "note": "Use supported plugins, secure admin access, test updates and backups, and use a hosted checkout to reduce card-data exposure."
+    "note": "Use supported add-ons, protect administrator access and test updates and backups. Use a payment provider to handle card payments."
   },
   {
     "category": "ERP, CRM & automation",
     "title": "SAP and Business Integration",
-    "description": "Connect finance, orders and stock data from SAP to customer apps and other business systems.",
+    "description": "Connect SAP accounts, orders and stock information to other business tools, so teams do less copying between systems.",
     "logos": [
       "sap",
       "java",
@@ -294,12 +294,12 @@
         "Check failed and duplicate transactions."
       ]
     ],
-    "note": "Use supported SAP APIs and business events. Avoid direct writes to ERP tables; confirm licensing and the integration edition needed."
+    "note": "Use supported SAP connections. Check licences, prevent duplicate updates and keep a record of failed actions. Avoid direct changes to ERP database tables."
   },
   {
     "category": "ERP, CRM & automation",
     "title": "Oracle Business Data Integration",
-    "description": "Connect existing Oracle databases to new portals and reporting tools without replacing the core system.",
+    "description": "Use information from your Oracle systems in new business apps and reports while keeping the main system in place.",
     "logos": [
       "oracle",
       "java",
@@ -327,12 +327,12 @@
         "Serve apps without overloading the core."
       ]
     ],
-    "note": "Use supported APIs for ERP products. Database replication and change capture need version, licensing and load checks."
+    "note": "Check the supported way to connect to each Oracle product. Confirm software versions, licences and the effect of data copying on the live system."
   },
   {
     "category": "ERP, CRM & automation",
     "title": "Salesforce Sales and Service",
-    "description": "Move customer enquiries into sales and service processes, with connections to finance and order systems.",
+    "description": "Keep customer enquiries, sales follow-ups and service requests connected to orders and accounts.",
     "logos": [
       "salesforce",
       "nodejs",
@@ -360,12 +360,12 @@
         "Send approved orders and status updates."
       ]
     ],
-    "note": "Agree which system owns each record. Design for API limits, duplicate prevention, customer permissions and integration retries."
+    "note": "Agree which system keeps the main customer record. Check access permissions, connection limits and how failed or duplicate updates are handled."
   },
   {
     "category": "ERP, CRM & automation",
     "title": "Workflow Automation with n8n",
-    "description": "Connect everyday tasks such as invoice follow-up, approval requests and service ticket routing.",
+    "description": "Move requests, invoice follow-ups and approvals between tools, using steps your team has agreed.",
     "logos": [
       "n8n",
       "postgresql",
@@ -393,12 +393,12 @@
         "Record the outcome and failed tasks."
       ]
     ],
-    "note": "Protect credentials, verify webhooks, and design safe retries. Use a queue and workers when workload or availability needs grow."
+    "note": "Protect connection passwords and check incoming requests. Make sure a failed step can be retried without creating the same action twice."
   },
   {
     "category": "Data & analytics",
     "title": "Cloud Data Warehouse",
-    "description": "Bring sales, finance and operations data together so teams can use consistent business reports.",
+    "description": "Bring sales, accounts and operations data together so teams can work from the same business numbers.",
     "logos": [
       "airflow",
       "dbt",
@@ -426,12 +426,12 @@
         "Publish agreed business measures."
       ]
     ],
-    "note": "Define data owners, access rules and freshness targets. Apply warehouse usage limits and test financial reporting logic."
+    "note": "Agree who owns each source, how often data is updated and how the numbers are checked. Set access and usage limits."
   },
   {
     "category": "Data & analytics",
     "title": "Spark Data Lakehouse",
-    "description": "Process large files, historical records and mixed datasets for analytics and machine learning.",
+    "description": "Organise large files and years of business records for reporting, analysis and AI projects.",
     "logos": [
       "spark",
       "python",
@@ -459,12 +459,12 @@
         "Serve governed analysis and model inputs."
       ]
     ],
-    "note": "Use a data catalogue, access controls, table maintenance and workload limits. Separate sensitive data and manage retention."
+    "note": "Keep a list of data sources and owners. Set access, storage and cost limits, and decide when old records should be removed."
   },
   {
     "category": "Data & analytics",
     "title": "Kafka Event Processing",
-    "description": "Share order, stock or payment-status changes between systems without making every app wait for the next one.",
+    "description": "Share updates about orders, stock and payment status between systems as the work happens.",
     "logos": [
       "kafka",
       "java",
@@ -492,12 +492,12 @@
         "Update views and notify other systems."
       ]
     ],
-    "note": "Plan message schemas, ordering, replay and consumer lag. Use idempotent consumers so replay does not create duplicate business actions."
+    "note": "Agree the message format and order. Check delayed updates and make sure replaying a message does not repeat a business action."
   },
   {
     "category": "Data & analytics",
     "title": "Practical Business Dashboards",
-    "description": "Give growing businesses clear sales and operations reports without starting with a large data platform.",
+    "description": "Bring sales and daily work into clear reports without starting with a large data system.",
     "logos": [
       "postgresql",
       "python",
@@ -525,12 +525,12 @@
         "Share dashboards with role-based access."
       ]
     ],
-    "note": "Use read-only reporting access, agree metric definitions and display data freshness. Add a warehouse when scale justifies it."
+    "note": "Use read-only access for reports. Agree what each number means and show when the data was last updated. Expand the setup only when needed."
   },
   {
     "category": "AI & machine learning",
     "title": "Private Document Assistant",
-    "description": "Let staff search company manuals and policies using models hosted in your own environment.",
+    "description": "Help staff find answers in approved company documents, using an AI model running on your own systems.",
     "logos": [
       "ollama",
       "fastapi",
@@ -558,12 +558,12 @@
         "Show evidence and flag uncertain answers."
       ]
     ],
-    "note": "Size compute for the chosen model and concurrent users. Test retrieval, access filtering and answer quality; no answer is guaranteed correct."
+    "note": "Check hardware needs, document permissions and answer quality. Show sources. An AI answer still needs checking and may be wrong."
   },
   {
     "category": "AI & machine learning",
     "title": "Azure Document AI Assistant",
-    "description": "Use managed AI and company documents for staff support, with existing Microsoft access controls.",
+    "description": "Help staff search company documents and prepare answers using Microsoft cloud AI, with access checks and sources.",
     "logos": [
       "azure",
       "python",
@@ -591,12 +591,12 @@
         "Check quality and retain approved logs."
       ]
     ],
-    "note": "Confirm model and search availability, data processing terms and region. Use private connectivity where supported and validate document permissions."
+    "note": "Check model availability, data handling terms and the location used for processing. Test that people see only documents they are allowed to access."
   },
   {
     "category": "AI & machine learning",
     "title": "Google Cloud AI Applications",
-    "description": "Add document search and AI support to customer or staff applications using managed Google Cloud services.",
+    "description": "Add document search and AI support to staff or customer apps using Google Cloud services.",
     "logos": [
       "googlecloud",
       "python",
@@ -624,12 +624,12 @@
         "Show sources, collect feedback and logs."
       ]
     ],
-    "note": "Validate the model, retrieval quality, safety rules, regional support and data handling terms before opening access to users."
+    "note": "Check answer quality, document access, data handling and service availability in the required location before giving users access."
   },
   {
     "category": "AI & machine learning",
     "title": "Prediction and ML Serving",
-    "description": "Deploy demand forecasts, risk scores or image classification models with a controlled release process.",
+    "description": "Use business data to test tools such as demand forecasts or image checks, and track how well they work.",
     "logos": [
       "pytorch",
       "mlflow",
@@ -657,12 +657,12 @@
         "Return predictions and track quality."
       ]
     ],
-    "note": "Compare against a simple baseline. Monitor drift, response time and business impact; keep rollback and retraining procedures."
+    "note": "Compare results with a simple existing method. Track errors and changes in accuracy, and keep a way to return to the previous model."
   },
   {
     "category": "IT operations & security",
     "title": "Infrastructure and GitOps Delivery",
-    "description": "Build environments and release software through approved, repeatable changes instead of manual server edits.",
+    "description": "Set up systems and release software through reviewed, repeatable steps, with a way to recover if a change goes wrong.",
     "logos": [
       "gitlab",
       "terraform",
@@ -690,12 +690,12 @@
         "Observe releases and recover safely."
       ]
     ],
-    "note": "Protect deployment credentials and Terraform state. Scan images, separate environments and test database migration rollback plans."
+    "note": "Protect deployment access and stored settings. Separate testing from live systems and plan how software and database changes can be reversed."
   },
   {
     "category": "IT operations & security",
     "title": "Monitoring and Service Health",
-    "description": "See application faults, slow requests and infrastructure issues in one place, with alerts for the right team.",
+    "description": "Bring faults, slow apps and system alerts into one place so the right team can investigate.",
     "logos": [
       "opentelemetry",
       "prometheus",
@@ -723,12 +723,12 @@
         "Investigate issues and notify responders."
       ]
     ],
-    "note": "Set service targets, useful alert thresholds and retention limits. Remove sensitive fields and control high-cardinality telemetry."
+    "note": "Agree useful alerts and who responds to them. Keep private information out of logs and set limits on how much monitoring data is stored."
   },
   {
     "category": "IT operations & security",
     "title": "Identity and Secure App Access",
-    "description": "Give staff one controlled way to access internal applications, with multi-factor sign-in and clear permissions.",
+    "description": "Give staff one way to sign in to business apps, with extra sign-in checks and clear access permissions.",
     "logos": [
       "keycloak",
       "nginx",
@@ -756,12 +756,12 @@
         "Track sign-ins and important actions."
       ]
     ],
-    "note": "Single sign-on is one layer of security. Also plan device controls, network restrictions, privileged access and emergency account recovery."
+    "note": "One sign-in does not cover every security need. Also check devices, network access, administrator accounts and emergency account recovery."
   },
   {
     "category": "IT operations & security",
     "title": "Backup and Recovery Foundation",
-    "description": "Protect databases and business systems, with a recovery plan the team can actually practise.",
+    "description": "Back up important business systems and practise restoring them, so the team knows what to do after a failure.",
     "logos": [
       "linux",
       "ansible",
@@ -789,6 +789,6 @@
         "Rebuild systems and verify restored data."
       ]
     ],
-    "note": "Agree recovery time and data-loss targets. Separate backup credentials, keep an offsite copy and schedule full restore exercises."
+    "note": "Agree how quickly systems must return and how much recent data could be lost. Keep a separate protected copy and practise a full restore."
   }
 ]
