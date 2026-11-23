@@ -70,9 +70,18 @@ def identity():
 def footer():
  return f'<footer class="site-footer"><div class="wrap"><div class="footer-layout"><div><a class="brand" href="index.html" aria-label="Autonoa Labs home">{brand()}</a>{identity()}</div><nav class="footer-links" aria-label="Footer navigation"><a href="index.html">Home</a>'+''.join(f'<a href="{s["file"]}">{s["name"]}</a>' for s in services)+'<a href="contact.html">Contact</a><a href="index.html#diagnostic">Quick assessment</a></nav></div><p class="copyright">© 2026 Autonoa Labs. Connected systems. People in control.</p></div></footer>'
 
+def favicon_links():
+ return '''<!-- favicon:start -->
+  <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48 64x64 128x128 256x256" type="image/x-icon">
+  <link rel="icon" href="favicon.png" sizes="96x96" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="site.webmanifest">
+  <!-- favicon:end -->'''
+
 def shell(title,description,file,body,service=None,extra_script=''):
  return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#0b1418"><title>{esc(title)}</title><meta name="description" content="{esc(description,quote=True)}">
   {metadata(title,description,file,service)}
+  {favicon_links()}
   <link rel="stylesheet" href="assets/service-pages.css?v={VERSION}"></head><body>{header(file)}<main id="main" class="wrap">{body}</main>{footer()}<script src="assets/site-navigation.js?v=20261123-contact1" defer></script>{extra_script}</body></html>'''
 
 for s in services:
@@ -103,6 +112,10 @@ contact_body=f'''<p class="breadcrumb"><a href="index.html">Home</a><span>/</spa
 
 home=ROOT/'index.html'
 text=home.read_text(encoding='utf-8')
+if '<!-- favicon:start -->' in text:
+ text=re.sub(r'<!-- favicon:start -->.*?<!-- favicon:end -->',lambda m:favicon_links(),text,flags=re.S)
+else:
+ text=text.replace('</head>',favicon_links()+'\n</head>',1)
 title='Autonoa Labs | Workflow Automation, AI, IT & MarTech'
 description='Autonoa Labs connects business software, automates approvals, builds AI document assistants and links marketing tools, customer records and reporting.'
 text=re.sub(r'<title>.*?</title>',f'<title>{esc(title)}</title>',text,count=1)
