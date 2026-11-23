@@ -5,12 +5,13 @@
   const fields = {
     goal: {label:'What would you like to improve first?', hint:'Choose the main problem you want to solve.', options:[
       option('automate','Reduce manual work','Spend less time on repeat tasks.'), option('connect','Connect our systems','Stop copying data between tools.'),
+      option('marketing','Connect marketing and sales','Keep enquiries, campaigns and follow-ups connected.'),
       option('ai','Find and use company information with AI','Help staff search documents and prepare answers.'), option('reports','Get clearer business reports','Bring the right business numbers together.'),
       option('reliable','Make our IT more reliable','Improve sign-in, backups and system availability.'), option('unsure','Help us find a starting point','We want advice before choosing tools.') ]},
     size: {label:'How many people will use the system?', hint:'Optional. This helps us plan training and support.', optional:true, options:[option('small','Up to 25 people'),option('medium','26–100 people'),option('large','More than 100 people'),option('unsure','Not sure yet')]},
     environment: {label:'Where do your systems run today?', hint:'Choose the closest match.', options:[option('cloud','Mostly in the cloud','Online services or cloud-hosted apps.'),option('office','Mostly in our office','Our own servers or local software.'),option('hybrid','A mix of both','Office systems connected to cloud tools.'),option('unsure','I am not sure','We can map this out together.')]},
-    systems: {label:'Which tools do you already use?', hint:'Choose all that apply. We start by looking at what you already have.', multi:true, options:[option('microsoft','Microsoft 365 / Teams'),option('sap','SAP'),option('erp','Other ERP / business management software'),option('oracle','Oracle'),option('salesforce','Salesforce'),option('crm','Other CRM / customer management software'),option('spreadsheets','Excel / spreadsheets'),option('custom','Software built for our business'),option('unsure','Not sure / none of these')]},
-    task: {label:'Which piece of work should we look at first?', hint:'Choose one real process to start with.', options:[option('documents','Finding answers in documents','Policies, manuals or internal guidance.'),option('records','Checking and matching records','Invoices, orders or stock data.'),option('requests','Handling requests and approvals','Tickets, follow-ups or staff approvals.'),option('reporting','Preparing reports','Combining data and updating dashboards.'),option('portal','Running a customer or staff app','A portal, booking service or business app.'),option('unsure','We need help choosing','Identify a useful process first.')]},
+    systems: {label:'Which tools do you already use?', hint:'Choose all that apply. We start by looking at what you already have.', multi:true, options:[option('microsoft','Microsoft 365 / Teams'),option('erp','ERP / business management software'),option('oracle','Oracle'),option('salesforce','Salesforce'),option('crm','Other CRM / customer management software'),option('marketing','Email / campaign tools'),option('website','Website forms / online store'),option('spreadsheets','Excel / spreadsheets'),option('custom','Software built for our business'),option('unsure','Not sure / none of these')]},
+    task: {label:'Which piece of work should we look at first?', hint:'Choose one real process to start with.', options:[option('documents','Finding answers in documents','Policies, manuals or internal guidance.'),option('records','Checking and matching records','Invoices, orders or stock data.'),option('requests','Handling requests and approvals','Tickets, follow-ups or staff approvals.'),option('marketing','Managing leads and campaigns','Capture enquiries, follow up and track results.'),option('reporting','Preparing reports','Combining data and updating dashboards.'),option('portal','Running a customer or staff app','A portal, booking service or business app.'),option('unsure','We need help choosing','Identify a useful process first.')]},
     control: {label:'How much work should the system do on its own?', hint:'Your team decides which actions need approval and who handles problems.', options:[option('suggest','Make suggestions for our team','People check the suggestion and do the work.'),option('approve','Prepare work, then wait for approval','The system acts only after someone approves.'),option('bounded','Do agreed routine steps automatically','Send problems and important decisions to people.'),option('unsure','Help us decide the right limits','Agree what is allowed before automating.')]},
     data: {label:'What kind of information will the work use?', hint:'Choose the type that needs the most protection. You do not need to share any documents here.', options:[option('public','Public information','Content anyone is allowed to see.'),option('internal','Internal business information','Company documents and routine business records.'),option('sensitive','Customer, finance or other private records','Information that needs extra care and restricted access.'),option('unsure','We need help checking this','Check the information before choosing a setup.')]},
     location: {label:'Where does your data need to stay?', hint:'Think about storage, backups and AI processing. We will check specific requirements with you.', options:[option('india','India'),option('uae','UAE'),option('saudi','Saudi Arabia'),option('existing','Within our own environment'),option('other','Another country / region'),option('flexible','No fixed location requirement'),option('unsure','We need help deciding')]}
@@ -44,7 +45,9 @@
     privateAI:{index:16,title:'Private Document Assistant',logos:['ollama','fastapi','postgresql']},
     azureAI:{index:17,title:'Azure Document AI Assistant',logos:['azure','python','dotnet']},
     automation:{index:11,title:'Workflow Automation with n8n',logos:['n8n','postgresql','python']},
-    sap:{index:8,title:'SAP and Business Integration',logos:['sap','java','postgresql']},
+    marketing:{index:8,title:'Lead Capture and CRM Follow-up',logos:['wordpress','n8n','postgresql']},
+    campaigns:{index:24,title:'Campaign and Customer Journey Automation',logos:['salesforce','n8n','postgresql']},
+    marketingReports:{index:25,title:'Marketing Measurement and Dashboards',logos:['wordpress','python','metabase']},
     oracle:{index:9,title:'Oracle Business Data Integration',logos:['oracle','java','python']},
     crm:{index:10,title:'Salesforce Sales and Service',logos:['salesforce','nodejs','postgresql']},
     reports:{index:15,title:'Practical Business Dashboards',logos:['postgresql','python','metabase']},
@@ -55,6 +58,7 @@
     recovery:{index:23,title:'Backup and Recovery Foundation',logos:['linux','ansible','postgresql']}
   };
   const pilots = {
+    marketing:{title:'Connect one enquiry to a clear follow-up.', reason:'Start with one customer journey, from a website enquiry to a sales response. Check the hand-offs before adding more campaigns or tools.', work:'Map the form, customer record, team assignment and next follow-up. Check contact preferences, prevent duplicate records and test the complete journey with sample enquiries.', measure:'Track enquiries received, time to first follow-up, missed hand-offs and bookings or sales outcomes. Compare the records across your marketing and sales tools.'},
     documents:{title:'Try an AI assistant with a small set of company documents.', reason:'Start with documents your team uses often. Check whether the answers are useful before adding more.', work:'Choose approved documents and keep their access permissions. Test questions with known answers, show the sources and send uncertain answers to staff.', measure:'Check answer accuracy, whether the sources support each answer and how often someone still needs help.'},
     records:{title:'Try matching one set of business records.', reason:'Start with one type of record so your team can check the matching rules and any differences.', work:'Use a test copy of invoices, orders or stock records. Agree what should match, highlight differences and ask for approval before changing the main system.', measure:'Compare correct and incorrect matches, review time and time spent using the current manual process.'},
     requests:{title:'Try one request and approval process.', reason:'One familiar process makes it easier to test each step and decide who is responsible.', work:'Follow one request from arrival to completion. Name the person responsible for each step, set approvals and make sure failed steps can be retried without duplicate actions.', measure:'Check completion time, missed requests, failed steps and repeated actions.'},
@@ -68,13 +72,18 @@
     if (steps.some((_, i) => missing(answers, i).length)) throw new Error('Complete the required questions before building a plan.');
     let kind = answers.task;
     if (answers.goal === 'reliable') kind = 'foundation';
-    else if (kind === 'unsure') kind = {automate:'requests',connect:'records',ai:'documents',reports:'reporting',unsure:'discovery'}[answers.goal] || 'discovery';
+    else if (answers.goal === 'marketing' && ['unsure','requests'].includes(kind)) kind = 'marketing';
+    else if (kind === 'unsure') kind = {automate:'requests',connect:'records',marketing:'marketing',ai:'documents',reports:'reporting',unsure:'discovery'}[answers.goal] || 'discovery';
     const pilot = pilots[kind];
     const shortlist = [];
     const add = (key, why) => { if (!shortlist.some(s => s.title === patterns[key].title)) shortlist.push({...patterns[key], why}); };
     const systems = answers.systems || [];
     const privateBoundary = answers.location === 'existing';
-    if (kind === 'documents') {
+    if (kind === 'marketing') {
+      add('marketing','An example for connecting enquiries to your existing customer records and team follow-ups. Check the tools you already have before adding another platform.');
+      if (systems.includes('marketing')) add('campaigns','An example for connecting your campaign tools to approved audiences, responses and sales follow-ups.');
+      else add('marketingReports','An example for seeing where enquiries come from and what happens after the team responds.');
+    } else if (kind === 'documents') {
       if (systems.includes('microsoft') && !privateBoundary) {
         add('azureAI','An option because you already use Microsoft tools. Check where the AI runs, whether it is available there and how it handles your documents.');
         add('privateAI','Another option if the AI must run on your own systems. Check hardware needs and who will support it.');
@@ -83,11 +92,11 @@
         if (!privateBoundary) add('azureAI','A cloud service to compare after checking data handling and availability in your required location.');
       }
     } else if (['records','requests'].includes(kind)) {
-      if (systems.includes('sap')) add('sap','Check the supported connections for your SAP system. Use these tools only if your business software is SAP.');
       if (systems.includes('oracle')) add('oracle','Check how other software can connect to your Oracle systems with the right permissions.');
       if (systems.includes('salesforce') && shortlist.length < 2) add('crm','An example for a business using Salesforce. Other customer-management software needs its own supported connections.');
       if (shortlist.length < 2) add('automation','An option for connecting tasks. Check which tools it can connect, who approves actions and how failed steps are retried.');
     } else if (kind === 'reporting') {
+      if (answers.goal === 'marketing') add('marketingReports','An example for connecting marketing activity, customer enquiries and sales outcomes in one report.');
       add('reports','A smaller reporting setup to consider first. Agree the business numbers and let reports read data without changing the original records.');
       if (systems.filter(s => s !== 'unsure').length >= 3 || answers.size === 'large') add('warehouse','A larger setup to compare if you have many data sources or large amounts of reporting data. Check the extra cost and support work.');
     } else if (kind === 'portal') {
@@ -97,6 +106,7 @@
       add('recovery','An example for protected backup copies and a recovery process the team has tested.');
     }
     const checks = [];
+    if (kind === 'marketing' || answers.goal === 'marketing') checks.push('Confirm contact preferences, the approved audience and who signs off campaign messages. Test unsubscribe handling, duplicate contacts and the hand-off to sales.');
     if (answers.data === 'sensitive') checks.push('Identify private records, limit who can access them and use sample or masked data in the trial. Keep human approval for important customer or financial actions.');
     if (answers.data === 'unsure') checks.push('Identify the data types and their owners before sharing records with a new service or AI model.');
     if (answers.control === 'bounded') checks.push('Start with tested, low-risk steps. Set limits, record what happened and send problems to the right person.');

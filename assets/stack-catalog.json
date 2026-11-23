@@ -264,37 +264,37 @@
     "note": "Use supported add-ons, protect administrator access and test updates and backups. Use a payment provider to handle card payments."
   },
   {
-    "category": "ERP, CRM & automation",
-    "title": "SAP and Business Integration",
-    "description": "Connect SAP accounts, orders and stock information to other business tools, so teams do less copying between systems.",
+    "category": "Marketing technology (MarTech)",
+    "title": "Lead Capture and CRM Follow-up",
+    "description": "Connect website enquiries to customer records, assign each lead and keep the next follow-up clear.",
     "logos": [
-      "sap",
-      "java",
+      "wordpress",
+      "n8n",
       "postgresql"
     ],
     "steps": [
       [
-        "System of record",
-        "SAP S/4HANA",
-        "Keep approved business transactions."
+        "Enquiry",
+        "Website form",
+        "Collect the details needed for a response."
       ],
       [
-        "Integration",
-        "SAP Integration Suite",
-        "Map and validate approved API messages."
+        "Customer record",
+        "Your CRM",
+        "Create or update the right contact."
       ],
       [
-        "Applications",
-        "Business APIs + Java apps",
-        "Serve portals and connected systems."
+        "Follow-up",
+        "Connected workflow",
+        "Assign the enquiry and notify the team."
       ],
       [
-        "Tracking",
-        "Logs + reconciliation",
-        "Check failed and duplicate transactions."
+        "Outcome",
+        "Lead status + reporting",
+        "Track the response and next step."
       ]
     ],
-    "note": "Use supported SAP connections. Check licences, prevent duplicate updates and keep a record of failed actions. Avoid direct changes to ERP database tables."
+    "note": "Check form fields, duplicate contacts, staff access and contact preferences. Test the complete journey with sample enquiries before use."
   },
   {
     "category": "ERP, CRM & automation",
@@ -790,5 +790,104 @@
       ]
     ],
     "note": "Agree how quickly systems must return and how much recent data could be lost. Keep a separate protected copy and practise a full restore."
+  },
+  {
+    "category": "Marketing technology (MarTech)",
+    "title": "Campaign and Customer Journey Automation",
+    "description": "Connect approved audiences, campaign tools and follow-ups so marketing and sales can work from the same customer journey.",
+    "logos": [
+      "salesforce",
+      "n8n",
+      "postgresql"
+    ],
+    "steps": [
+      [
+        "Audience",
+        "CRM customer records",
+        "Choose the right contacts and preferences."
+      ],
+      [
+        "Message",
+        "Your email / campaign platform",
+        "Prepare and approve the message."
+      ],
+      [
+        "Next step",
+        "Connected workflow",
+        "Route responses and follow-ups to the team."
+      ],
+      [
+        "Result",
+        "Campaign + sales records",
+        "Record responses and customer outcomes."
+      ]
+    ],
+    "note": "Check platform connections, contact permissions, unsubscribe requests and message frequency. Agree who approves campaigns and handles failed steps."
+  },
+  {
+    "category": "Marketing technology (MarTech)",
+    "title": "Marketing Measurement and Dashboards",
+    "description": "Bring website enquiries, campaign responses and sales outcomes into reports your marketing and sales teams can use.",
+    "logos": [
+      "wordpress",
+      "python",
+      "metabase"
+    ],
+    "steps": [
+      [
+        "Activity",
+        "Website + campaign events",
+        "Agree the actions you want to measure."
+      ],
+      [
+        "Checks",
+        "Tracking + data quality",
+        "Check permitted tracking and missing events."
+      ],
+      [
+        "Data",
+        "Reporting database",
+        "Connect campaign and customer records."
+      ],
+      [
+        "Report",
+        "Metabase dashboards",
+        "Compare enquiries, follow-ups and outcomes."
+      ]
+    ],
+    "note": "Agree what counts as an enquiry or sale, check tracking preferences and show when data was updated. Test figures against the original systems; attribution can be incomplete."
+  },
+  {
+    "category": "Marketing technology (MarTech)",
+    "title": "Customer Data Connections",
+    "description": "Connect customer information across your website, CRM and campaign tools so teams can use clearer records and audiences.",
+    "logos": [
+      "postgresql",
+      "python",
+      "salesforce"
+    ],
+    "steps": [
+      [
+        "Sources",
+        "Website, CRM + campaign tools",
+        "Identify the records and their owners."
+      ],
+      [
+        "Quality",
+        "Customer IDs + record checks",
+        "Find missing details and duplicate contacts."
+      ],
+      [
+        "Connect",
+        "Approved data connections",
+        "Exchange only the information each tool needs."
+      ],
+      [
+        "Use",
+        "Audiences + reporting",
+        "Make agreed data available to the right team."
+      ]
+    ],
+    "note": "Agree the main customer record, matching rules, access and retention. Check that contact preferences and deletion requests reach connected tools."
   }
 ]

@@ -34,7 +34,7 @@
       if(key==='small'){
         stackEyebrow.textContent='PRACTICAL BUSINESS IDEAS // START WITH A DAILY NEED';
         ['<b>YOUR TOOLS</b>Keep your daily tools connected.','<b>YOUR INFORMATION</b>Find what your team needs.','<b>YOUR DAILY WORK</b>Keep tasks and follow-ups moving.'].forEach((t,i)=>pills[i].innerHTML=t);
-        ['Tools your team can rely on','AI help with your documents','Tasks with team approval','Keep people in control','Connect your daily tools','Make reporting clearer','Follow up on requests','Find your starting point','Protect access to your tools','Plan backup and recovery','Plan how private data is handled','Ask about security'].forEach((t,i)=>{if(footerLinks[i])footerLinks[i].textContent=t;});
+        ['Tools your team can rely on','AI help with your documents','Tasks with team approval','Keep people in control','Marketing and customer follow-ups','Make reporting clearer','Follow up on requests','Find your starting point','Protect access to your tools','Plan backup and recovery','Plan how private data is handled','Ask about security'].forEach((t,i)=>{if(footerLinks[i])footerLinks[i].textContent=t;});
       }
     }
     choices.querySelectorAll('[data-audience-choice]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.audienceChoice===key)));

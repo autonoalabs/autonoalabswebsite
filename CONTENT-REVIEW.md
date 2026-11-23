@@ -13,7 +13,7 @@ The rewrite uses one story: reliable IT supports apps and data; AI helps people 
 | Hero | Generic headline and no explicit link to the three car parts | Business outcome first; explain the three roles and connect them to the car |
 | Service explanation | Words such as application foundation, retrieval, orchestration and exception queue appeared before their purpose was clear | Use familiar verbs: store, read, find, check, approve, update and follow up |
 | Three-part example | Technical descriptions required the reader to translate the analogy | Follow the same invoice through storage, checking and approved updates |
-| Technology library | Tools and architecture names could feel like a shopping list | Explain each business use first; keep the 24 real tool combinations and optional technical detail |
+| Technology library | Tools and architecture names could feel like a shopping list | Explain each business use first; keep the 27 real tool combinations and optional technical detail |
 | Audience views | The enterprise view reintroduced difficult wording such as current estate and governed workflows | Change the scope and examples for each business size while keeping plain language |
 | Assessment | Pilot, advisory, write-back and baseline made the suggested plan harder to understand | Describe a small trial, who approves work and how to check the result |
 | Buttons | Deploy Your System and View System Reports did not describe the next page action | Find My Starting Point opens the assessment; Explore the Three Parts opens the explanation |
@@ -22,11 +22,11 @@ The rewrite uses one story: reliable IT supports apps and data; AI helps people 
 
 ## Final default hero
 
-Eyebrow: IT, AI & AUTOMATION FOR YOUR BUSINESS
+Eyebrow: IT, AI, AUTOMATION & MARTECH
 
 Headline: **Keep Your Business Moving.**
 
-Strong IT supports your apps. AI helps your team use information. Automation moves work between your tools. Like the chassis, engine and transmission of a car, each part has a job. We help them work together.
+Strong IT supports your apps. AI helps your team use information. Automation moves work between tools. Together, they also connect your marketing, customer enquiries and follow-ups. Like the parts of a car, they work best as one system.
 
 Primary action: **Find My Starting Point** → assessment.
 
@@ -40,12 +40,14 @@ The supporting strip makes the image labels concrete:
 
 The embedded image labels and accepted artwork are preserved. Enterprise IT Infrastructure is explained as the IT foundation for apps and data; AI Intelligence becomes practical AI support; Autonomous Workflow is explained as agreed steps, approval and problem handling. The copy does not suggest that important financial decisions should happen without people.
 
+The service story now also names MarTech: website enquiries, CRM, campaign follow-ups, customer data and measurement. A dedicated section connects these capabilities to a customer journey; marketing assessment choices and four library examples support it. The unsupported vendor service was removed from the site, generator, questionnaire and recommendation rules.
+
 ## Section story
 
 1. **Choose your business view.** Visitors choose examples without needing to know a technology or disclose business details.
 2. **Understand the three roles.** The car is a visual explanation of a connected business system.
 3. **Follow one familiar example.** The IT foundation stores an invoice; AI helps read it; software checks records; an approved workflow updates the accounts system. Payment approval stays with the responsible team.
-4. **Explore suitable tools.** All 24 descriptions and their pre-use checks are rewritten. Technology names remain accurate and optional detail remains available.
+4. **Explore suitable tools.** All 27 descriptions and their pre-use checks are rewritten. Technology names remain accurate and optional detail remains available.
 5. **Find the right first step.** The questionnaire asks about business goals, tools, tasks, approvals and data. It gives a starting plan, not a claim to have inspected live systems.
 6. **Discuss the work.** The closing asks where copying, checking or chasing slows the team down and explains that the contact action opens email.
 
@@ -70,4 +72,4 @@ Product names, logo assets, accepted images, audience choices, assessment answer
 
 ## Validation
 
-All 13 existing assessment, audience and component checks pass. The regenerated catalogue retains all 24 examples and their links. Browser review covers desktop and phone copy fit, business-view switching, the car tabs and a complete assessment with the revised questions and result text. Local references and duplicate IDs are checked before packaging. Validation was completed locally.
+All 17 assessment, audience and component checks pass. The regenerated catalogue retains all 27 examples and their links. Browser review covers desktop and phone copy fit, business-view switching, the car tabs and a complete assessment with the revised questions and result text. Local references and duplicate IDs are checked before packaging. Validation was completed locally.

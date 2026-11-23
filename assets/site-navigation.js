@@ -1,7 +1,7 @@
 (() => {
   const button=document.querySelector('.hamb');
   const nav=document.querySelector('.topbar .nav');
-  const compact=matchMedia('(max-width:1040px)');
+  const compact=matchMedia('(max-width:1200px)');
   function close(){nav.removeAttribute('style');button.setAttribute('aria-expanded','false');button.setAttribute('aria-label','Open navigation');}
   button.addEventListener('click',()=>{
     if(button.getAttribute('aria-expanded')==='true'){close();return;}

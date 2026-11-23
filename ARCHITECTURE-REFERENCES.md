@@ -11,7 +11,6 @@ For India and Gulf projects, confirm customer-specific data and backup locations
 - [AWS Architecture Center](https://aws.amazon.com/architecture/)
 - [Google Cloud Architecture Center](https://cloud.google.com/architecture)
 - [OpenTelemetry Collector architecture](https://opentelemetry.io/docs/collector/architecture/)
-- [SAP Integration Suite documentation](https://help.sap.com/docs/integration-suite)
 - [Red Hat OpenShift documentation](https://docs.redhat.com/en/documentation/openshift_container_platform)
 - [n8n documentation](https://docs.n8n.io/)
 

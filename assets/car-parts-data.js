@@ -3,7 +3,7 @@
   const parts=[
     {id:'chassis',name:'The chassis',role:'Your IT foundation',number:'01',
       heading:'A reliable base for your apps and data.',
-      analogy:'The chassis supports the car. Your IT foundation supports your business software, files and staff access. We help these parts work together, with backups and clear permissions.',
+      analogy:'The chassis supports the car. Your IT foundation supports your business and marketing software, files and staff access. We help these parts work together, with backups and clear permissions.',
       image:'assets/car-components/chassis-v2.png',imageWidth:1536,imageHeight:1024,caption:'The chassis · the supporting frame',alt:'Standalone chassis frame with suspension and four wheels, illustrated in graphite and gold.',
       responsibilities:[['Keep your software running','Give your website, accounts software, customer records and staff tools a reliable place to run.'],['Connect information and access','Let the right people use the right apps and data, without copying everything by hand.'],['Plan for problems','Monitor important systems, back up business data and check that it can be restored.']],
       technologies:[['azure','Azure','Example app hosting'],['postgresql','PostgreSQL','Business records'],['keycloak','Keycloak','Application sign-in']],
@@ -27,7 +27,7 @@
       heading:'Move routine work between your tools.',
       analogy:'The transmission passes power to the wheels. Automation passes information and tasks between your business tools. It follows agreed steps and asks for approval when needed.',
       image:'assets/car-components/transmission-v2.png',imageWidth:1536,imageHeight:1024,caption:'The transmission · power put to work',alt:'Standalone cutaway gearbox illustration showing the transmission gear train and shafts.',
-      responsibilities:[['Connect your tools','Pass approved information between accounts, customer records, support and other software.'],['Follow your approval rules','Send each task to the right person. Wait for approval before important changes.'],['Keep track of the result','Record completed steps, flag failures and avoid creating the same action twice.']],
+      responsibilities:[['Connect your tools','Pass approved information between marketing, sales, accounts, support and other software.'],['Follow your approval rules','Send each task to the right person. Wait for approval before important changes.'],['Keep track of the result','Record completed steps, flag failures and avoid creating the same action twice.']],
       technologies:[['n8n','n8n','Connect task steps'],['nodejs','Node.js','Connect business software'],['kafka','Apache Kafka','Share system updates at scale']],
       exampleTitle:'Update the accounts system after approval.',
       example:'After the right person approves, the workflow updates the accounts system and notifies the team. If the update fails, someone is asked to check it. Payment approval stays with the responsible team.',

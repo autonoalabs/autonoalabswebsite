@@ -13,7 +13,7 @@ No answers are preselected. Unknown answers are valid. Back and Edit preserve an
 
 ## Starting plan
 
-The rules choose a scoped starting activity, explain the next three stages, suggest measures, flag data/approval checks and optionally link to up to two example architectures. A reliability goal prioritises IT foundations. A wholly uncertain visitor gets a systems/process review before a technology shortlist. A request to keep data inside the customer's environment excludes managed AI from the document-assistant shortlist. Generic ERP or CRM choices do not imply SAP or Salesforce.
+The rules choose a scoped starting activity, explain the next three stages, suggest measures, flag data/approval checks and optionally link to up to two example architectures. A reliability goal prioritises IT foundations. A wholly uncertain visitor gets a systems/process review before a technology shortlist. A request to keep data inside the customer's environment excludes managed AI from the document-assistant shortlist. A generic CRM choice does not imply Salesforce. Unsupported service selections are discarded.
 
 Example: a Microsoft user seeking document support, choosing sensitive data and an own-environment boundary, sees a self-hosted document-assistant example with explicit access, masked-pilot-data and approval checks. Changing the process to record matching changes the plan and its measures. Report export and email drafts use the same selected answers as the displayed plan.
 

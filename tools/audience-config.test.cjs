@@ -17,6 +17,7 @@ test('each suggested example points to a real architecture',()=>{
 test('audience copy does not alter assessment answers or infer team size',()=>{
   for(const p of [profiles.small,profiles.growing,profiles.enterprise]){
     assert.equal(p.steps.length,4);assert.equal(p.stepDescriptions.length,4);
+    assert.equal(p.nav.length,7,'Every view must label MarTech, Contact and the primary action');
     assert.ok(!Object.hasOwn(p,'answers'));assert.ok(!Object.hasOwn(p,'size'));
   }
 });

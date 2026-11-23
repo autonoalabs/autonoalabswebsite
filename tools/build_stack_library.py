@@ -51,11 +51,11 @@ add('Business applications', 'WordPress and WooCommerce',
     [('Customers','CDN + web protection','Deliver store pages and filter traffic.'),('Store','WordPress + WooCommerce','Manage products, content and orders.'),('Records','MySQL + object storage','Store orders, media and catalogue data.'),('Payments','Hosted payment gateway','Send payment processing to a provider.')],
     'Use supported add-ons, protect administrator access and test updates and backups. Use a payment provider to handle card payments.')
 
-add('ERP, CRM & automation', 'SAP and Business Integration',
-    'Connect SAP accounts, orders and stock information to other business tools, so teams do less copying between systems.',
-    'sap java postgresql',
-    [('System of record','SAP S/4HANA','Keep approved business transactions.'),('Integration','SAP Integration Suite','Map and validate approved API messages.'),('Applications','Business APIs + Java apps','Serve portals and connected systems.'),('Tracking','Logs + reconciliation','Check failed and duplicate transactions.')],
-    'Use supported SAP connections. Check licences, prevent duplicate updates and keep a record of failed actions. Avoid direct changes to ERP database tables.')
+add('Marketing technology (MarTech)', 'Lead Capture and CRM Follow-up',
+    'Connect website enquiries to customer records, assign each lead and keep the next follow-up clear.',
+    'wordpress n8n postgresql',
+    [('Enquiry','Website form','Collect the details needed for a response.'),('Customer record','Your CRM','Create or update the right contact.'),('Follow-up','Connected workflow','Assign the enquiry and notify the team.'),('Outcome','Lead status + reporting','Track the response and next step.')],
+    'Check form fields, duplicate contacts, staff access and contact preferences. Test the complete journey with sample enquiries before use.')
 add('ERP, CRM & automation', 'Oracle Business Data Integration',
     'Use information from your Oracle systems in new business apps and reports while keeping the main system in place.',
     'oracle java python',
@@ -135,8 +135,24 @@ add('IT operations & security', 'Backup and Recovery Foundation',
     [('Protect','Apps + PostgreSQL','Identify business systems and recovery order.'),('Back up','Database-native backups','Capture consistent backups and transaction logs.'),('Isolate','Encrypted backup storage','Keep an isolated, immutable copy where supported.'),('Recover','Ansible + restore tests','Rebuild systems and verify restored data.')],
     'Agree how quickly systems must return and how much recent data could be lost. Keep a separate protected copy and practise a full restore.')
 
+add('Marketing technology (MarTech)', 'Campaign and Customer Journey Automation',
+    'Connect approved audiences, campaign tools and follow-ups so marketing and sales can work from the same customer journey.',
+    'salesforce n8n postgresql',
+    [('Audience','CRM customer records','Choose the right contacts and preferences.'),('Message','Your email / campaign platform','Prepare and approve the message.'),('Next step','Connected workflow','Route responses and follow-ups to the team.'),('Result','Campaign + sales records','Record responses and customer outcomes.')],
+    'Check platform connections, contact permissions, unsubscribe requests and message frequency. Agree who approves campaigns and handles failed steps.')
+add('Marketing technology (MarTech)', 'Marketing Measurement and Dashboards',
+    'Bring website enquiries, campaign responses and sales outcomes into reports your marketing and sales teams can use.',
+    'wordpress python metabase',
+    [('Activity','Website + campaign events','Agree the actions you want to measure.'),('Checks','Tracking + data quality','Check permitted tracking and missing events.'),('Data','Reporting database','Connect campaign and customer records.'),('Report','Metabase dashboards','Compare enquiries, follow-ups and outcomes.')],
+    'Agree what counts as an enquiry or sale, check tracking preferences and show when data was updated. Test figures against the original systems; attribution can be incomplete.')
+add('Marketing technology (MarTech)', 'Customer Data Connections',
+    'Connect customer information across your website, CRM and campaign tools so teams can use clearer records and audiences.',
+    'postgresql python salesforce',
+    [('Sources','Website, CRM + campaign tools','Identify the records and their owners.'),('Quality','Customer IDs + record checks','Find missing details and duplicate contacts.'),('Connect','Approved data connections','Exchange only the information each tool needs.'),('Use','Audiences + reporting','Make agreed data available to the right team.')],
+    'Agree the main customer record, matching rules, access and retention. Check that contact preferences and deletion requests reach connected tools.')
+
 manifest=json.loads(Path('assets/tech-logos/manifest.json').read_text())
-assert len(catalog)==24
+assert len(catalog)==27
 def logo(key):
     m=manifest[key]; assert 'file' in m and Path(m['file']).exists(), key
     return f'<span class="technology"><span class="technology-icon"><img src="{m["file"]}" alt="" width="26" height="26" loading="lazy"></span><span>{esc(m["name"])}</span></span>'
@@ -145,9 +161,9 @@ filters=''.join(f'<button type="button" class="stack-filter" aria-pressed="false
 cards=[]
 for i,s in enumerate(catalog):
     flow=''.join(f'<li><span class="architecture-role">{esc(role)}</span><strong>{esc(product)}</strong><span>{esc(note)}</span></li>' for role,product,note in s['steps'])
-    # Mark the six overview cards as featured: one from each family.
-    featured='true' if i%4==0 else 'false'
-    href='mailto:contact@autonoalabs.com?subject='+quote('Discuss '+s['title'])+'&body='+quote('Hello Autonoa Labs,\n\nI would like to discuss the '+s['title']+' example for our business.\n\nOur current systems:\nOur main requirement:\nPreferred data location:\n')
+    # Curated overview; audience-config.js selects the examples shown for each business view.
+    featured='true' if i in [0,4,8,12,16,20] else 'false'
+    href='contact.html?service='+('martech' if s['category']=='Marketing technology (MarTech)' else 'not-sure')+'&topic='+quote(s['title'])
     cards.append(f'''<article class="stack-example" data-stack-category="{esc(s['category'])}" data-featured="{featured}" aria-labelledby="stack-title-{i}">
       <div class="stack-family">{esc(s['category'])}</div>
       <div class="technology-row">{''.join(logo(k) for k in s['logos'])}</div>
@@ -161,11 +177,11 @@ for i,s in enumerate(catalog):
 section=f'''<section class="section blueprints stack-library" id="blueprints" aria-labelledby="stack-library-title">
     <div class="eyebrow">PRACTICAL SYSTEM EXAMPLES <span class="soft">// BUILT AROUND YOUR BUSINESS</span></div>
     <div class="stack-library-heading"><div><h2 id="stack-library-title">Business Needs First.<br>Technology That Fits.</h2>
-    <p class="lead">A technology stack is the set of tools behind a system. Explore examples for everyday business needs, then open the technical details when you want to see how the tools connect.</p></div><a class="stack-help" href="#diagnostic">Not sure which tools you need? <span>Find your starting point →</span></a></div>
-    <div class="stack-filters" role="group" aria-label="Filter technology stacks" hidden><button class="stack-filter" type="button" aria-pressed="true" data-stack-category="all">All examples <span>24</span></button>{filters}</div>
-    <div class="stack-results"><p id="stack-result-count" role="status" aria-live="polite">24 system examples</p><span>Open an example to see how the tools connect</span></div>
+    <p class="lead">A technology stack is the set of tools behind a system. Explore examples for business apps, IT, AI and marketing technology, then open the details to see how the tools connect.</p></div><a class="stack-help" href="#diagnostic">Not sure which tools you need? <span>Find your starting point →</span></a></div>
+    <div class="stack-filters" role="group" aria-label="Filter technology stacks" hidden><button class="stack-filter" type="button" aria-pressed="true" data-stack-category="all">All examples <span>{len(catalog)}</span></button>{filters}</div>
+    <div class="stack-results"><p id="stack-result-count" role="status" aria-live="polite">{len(catalog)} system examples</p><span>Open an example to see how the tools connect</span></div>
     <div class="stack-library-grid">{''.join(cards)}</div>
-    <div class="stack-library-more" hidden><button type="button" class="btn" id="stack-show-more">Explore all 24 examples <span aria-hidden="true">↓</span></button></div>
+    <div class="stack-library-more" hidden><button type="button" class="btn" id="stack-show-more">Explore all {len(catalog)} examples <span aria-hidden="true">↓</span></button></div>
     <div class="stack-library-foot"><p>You do not need every tool shown here. We choose a setup around your work, existing systems, budget, support team and data requirements.</p><small>These are example setups. The final choice depends on your requirements. Product names and logos belong to their owners; their use does not imply a partnership.</small></div>
   </section>'''
 page=Path('index.html');text=page.read_text(encoding='utf-8')

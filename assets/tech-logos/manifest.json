@@ -159,11 +159,6 @@
     "file": "assets/tech-logos/ansible.svg",
     "source": "https://raw.githubusercontent.com/devicons/devicon/master/icons/ansible/ansible-original.svg"
   },
-  "sap": {
-    "name": "SAP",
-    "file": "assets/tech-logos/sap.svg",
-    "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/sap.svg"
-  },
   "n8n": {
     "name": "n8n",
     "file": "assets/tech-logos/n8n.svg",

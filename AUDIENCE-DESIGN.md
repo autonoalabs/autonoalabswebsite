@@ -8,7 +8,7 @@ Visitors can choose Small business, Growing business, Enterprise or Explore ever
 | --- | --- | --- |
 | Small business | Plain language about daily work, a customer-enquiry flow and one practical next step | Three business examples; product logos and architecture appear when requested. The original technical architecture remains available through a disclosure button. |
 | Growing business | Connected teams, systems, data and ownership | Six examples covering cloud apps, ERP, CRM, reporting and workflows. |
-| Enterprise | Integration, data boundaries, review points and operations | Six architecture examples covering hybrid platforms, enterprise apps, SAP, events, AI and delivery. |
+| Enterprise | Integration, data boundaries, review points and operations | Six architecture examples covering hybrid platforms, enterprise apps, customer data, events, AI and delivery. |
 | Explore everything | Original general website | Six overview examples plus the full, filterable library of 24 architectures. |
 
 Navigation, hero, section introductions, assessment language and closing contact wording follow the chosen view. The small-business footer uses plainer descriptions. The original supplied car artwork remains in the growing, enterprise and general views. The small-business view introduces the services through a simple business workflow instead.
@@ -31,4 +31,4 @@ This uses [progressive disclosure](https://www.nngroup.com/articles/progressive-
 
 ## Validation
 
-Eleven automated checks cover the existing assessment rules, supported view keys, valid catalogue indexes and the separation of profile copy from assessment answers. Browser checks cover all four views, restoration of the general content, URL refresh persistence, optional full-catalogue access, technical disclosures, preservation of selected SAP/Microsoft tools across views, sensitive-data approval checks, result disclosures and links into the catalogue. Layouts were checked at 1440px, 820px, 390px and 320px widths without horizontal overflow. Browser error logs were empty. This revision is local and has not been pushed.
+Eleven automated checks cover the existing assessment rules, supported view keys, valid catalogue indexes and the separation of profile copy from assessment answers. Browser checks cover all four views, restoration of the general content, URL refresh persistence, optional full-catalogue access, technical disclosures, preservation of selected CRM/Microsoft tools across views, sensitive-data approval checks, result disclosures and links into the catalogue. Layouts were checked at 1440px, 820px, 390px and 320px widths without horizontal overflow. Browser error logs were empty. This revision is local and has not been pushed.
