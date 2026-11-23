@@ -44,6 +44,10 @@ The contact form prepares an email draft, as requested. Required fields are chec
 
 Run node --test tools/assessment-engine.test.cjs tools/audience-config.test.cjs tools/car-parts.test.cjs tools/contact-draft.test.cjs and python tools/check_site_pages.py to validate the form logic, assessment, metadata and links.
 
+## Publishing to Cloudflare
+
+Cloudflare production is connected to the GitHub `master` branch. Publish the tested website to `origin/master`; pushing only to `main` does not update the live domain. After pushing, verify https://www.autonoalabs.com/ and https://www.autonoalabs.com/contact.html before reporting the update as live. This checkout uses `master` for future publishing work.
+
 ## Local preview
 
 Run python -m http.server 8765 --bind 127.0.0.1 from this folder, then visit http://127.0.0.1:8765/#blueprints.
