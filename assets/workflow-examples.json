@@ -1,0 +1,54 @@
+[
+  {
+    "id": "enquiry", "tab": "Customer enquiries", "title": "An enquiry becomes a follow-up.",
+    "intro": "From your website to the right person, with a clear record of what happens next.",
+    "result": "One enquiry. A clear owner. A follow-up your team can track.",
+    "review": "Your team chooses the message and respects the customer's contact preferences.",
+    "service": "martech", "logos": [["salesforce", "Salesforce"], ["n8n", "n8n"], ["metabase", "Metabase"]],
+    "steps": [
+      {"title":"Website enquiry", "detail":"Capture the request", "kind":"Website", "icon":"form", "sample":"New enquiry", "caption":"The customer submits a request. Keep the enquiry and its source together."},
+      {"title":"Customer record", "detail":"Keep the details together", "kind":"CRM", "icon":"contact", "sample":"Contact saved", "caption":"The CRM matches or creates the customer record, avoiding duplicate contacts."},
+      {"title":"Team follow-up", "detail":"Assign the next step", "kind":"People + workflow", "icon":"people", "sample":"Assigned to sales", "human":true, "caption":"A team member receives the task and decides the next suitable response."},
+      {"title":"Sales report", "detail":"See what happened", "kind":"Reporting", "icon":"chart", "sample":"Outcome recorded", "caption":"The report connects the enquiry source, follow-up and recorded sales outcome."}
+    ]
+  },
+  {
+    "id": "invoice", "tab": "Invoice approvals", "title": "An invoice reaches the right approver.",
+    "intro": "Read the details, check the record and ask a person before updating accounts.",
+    "result": "Less copying. Clear approval. A record of every update.",
+    "review": "Missing or different details go to your team. Payment approval stays with the responsible person.",
+    "service": "automation", "logos": [["python", "Python"], ["n8n", "n8n"], ["postgresql", "PostgreSQL"]],
+    "steps": [
+      {"title":"Invoice received", "detail":"Keep the original file", "kind":"Document", "icon":"file", "sample":"Supplier invoice", "caption":"Keep the original invoice with the supplier record and the right access permissions."},
+      {"title":"Details checked", "detail":"Read and compare", "kind":"AI + software", "icon":"scan", "sample":"Invoice details", "caption":"AI helps read the details. Software compares them with approved business records."},
+      {"title":"Team approval", "detail":"Wait for a decision", "kind":"Human decision", "icon":"shield", "sample":"Review required", "human":true, "caption":"The workflow waits for your team's approval before updating accounts."},
+      {"title":"Accounts updated", "detail":"Confirm the result", "kind":"Connected software", "icon":"database", "sample":"Approved update", "caption":"Only after approval, update accounts and record the result. Failed updates go to the team."}
+    ]
+  },
+  {
+    "id": "documents", "tab": "AI document answers", "title": "A question becomes an answer with sources.",
+    "intro": "Help staff find information in the company documents they are allowed to use.",
+    "result": "An answer your team can check against the original source.",
+    "review": "If the documents do not support an answer, the assistant asks for a person's help.",
+    "service": "ai", "logos": [["python", "Python"], ["ollama", "Ollama"], ["postgresql", "PostgreSQL"]],
+    "steps": [
+      {"title":"Staff question", "detail":"Ask in plain English", "kind":"Your team", "icon":"chat", "sample":"What is our policy?", "caption":"A staff member asks a question about a company policy or process."},
+      {"title":"Access check", "detail":"Respect permissions", "kind":"Secure access", "icon":"shield", "sample":"Approved access", "caption":"Check who is asking. Search only documents that person is allowed to access."},
+      {"title":"Find sources", "detail":"Search approved files", "kind":"AI + search", "icon":"search", "sample":"Relevant passages", "caption":"Find useful passages in the approved, current company documents."},
+      {"title":"Answer + sources", "detail":"Open the original text", "kind":"Ready to check", "icon":"file", "sample":"Source included", "caption":"Show the answer with its supporting sources. Your team checks important or uncertain results."}
+    ]
+  },
+  {
+    "id": "systems", "tab": "Connected systems", "title": "An approved order moves between tools.",
+    "intro": "Connect sales and accounts without making your team copy the same details twice.",
+    "result": "The right information reaches the right system, with a checked result.",
+    "review": "Conflicting details or failed updates go to a person. Keep one agreed owner for each record.",
+    "service": "integration", "logos": [["nodejs", "Node.js"], ["postgresql", "PostgreSQL"], ["azure", "Azure"]],
+    "steps": [
+      {"title":"Approved order", "detail":"Start with a confirmed record", "kind":"Sales software", "icon":"cart", "sample":"Order confirmed", "caption":"The sales team confirms the order in its existing business software."},
+      {"title":"Match the details", "detail":"Map and check fields", "kind":"Connection", "icon":"connect", "sample":"Records matched", "caption":"Match the fields, check required details and exchange only approved information."},
+      {"title":"Update accounts", "detail":"Use a supported connection", "kind":"Accounts software", "icon":"database", "sample":"Update received", "caption":"The supported connection passes the approved order to the accounts system."},
+      {"title":"Check the result", "detail":"Confirm or flag a problem", "kind":"Tracking", "icon":"shield", "sample":"Result checked", "caption":"Confirm the update, record what happened and flag missing or failed updates for review."}
+    ]
+  }
+]

@@ -1,14 +1,15 @@
 // Regenerate only the architecture explorer. Run from the website root.
 const fs=require('node:fs');
 const parts=require('../assets/car-parts-data.js');
+const {renderFlow}=require('./workflow_markup.cjs');
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const tabs=parts.map((p,i)=>`<button type="button" class="tab part-tab" role="tab" id="part-tab-${p.id}" aria-controls="part-panel-${p.id}" aria-selected="${i===0}" tabindex="${i===0?0:-1}" data-car-part="${p.id}"><span class="part-tab-number">${p.number}</span><span><strong>${esc(p.name)}</strong><small>${esc(p.role)}</small></span></button>`).join('');
 const panels=parts.map((p,i)=>`<article class="part-panel" id="part-panel-${p.id}" role="tabpanel" aria-labelledby="part-tab-${p.id}" tabindex="0">
   <div class="part-visual-column"><figure class="part-figure"><img class="part-reference" src="${p.image}" width="${p.imageWidth}" height="${p.imageHeight}" alt="${esc(p.alt)}" loading="lazy" decoding="async"><figcaption>${esc(p.caption)}</figcaption></figure>
   <div class="part-example"><span class="part-overline">EXAMPLE / A SUPPLIER INVOICE</span><h4>${esc(p.exampleTitle)}</h4><p>${esc(p.example)}</p></div></div>
   <div class="part-software-column"><div class="part-panel-label"><span class="part-overline">${p.number} / ${esc(p.name)} → ${esc(p.role)}</span><span class="part-position">${i+1} of 3</span></div><h3>${esc(p.heading)}</h3><p class="part-analogy">${esc(p.analogy)}</p>
-  <div class="part-responsibilities"><h4>What this means for your business</h4><ul>${p.responsibilities.map(([t,d])=>`<li><span class="part-tick" aria-hidden="true">✓</span><div><strong>${esc(t)}</strong><p>${esc(d)}</p></div></li>`).join('')}</ul></div>
-  <div class="part-flow"><span class="part-overline">HOW THE STEPS CONNECT</span><ol aria-label="${esc(p.name)} software flow">${p.flow.map(([t,d])=>`<li><strong>${esc(t)}</strong><span>${esc(d)}</span></li>`).join('')}</ol></div></div>
+  <div class="part-flow">${renderFlow('part-workflow-'+p.id,{title:p.name+' software flow',steps:p.flow.map(([title,detail],i)=>({title,detail,kind:'',icon:['file','connect','shield'][i],caption:detail})),review:''},{compact:true})}</div>
+  <details class="part-explanation-details"><summary>What we set up and check</summary><div class="part-responsibilities"><ul>${p.responsibilities.map(([t,d])=>`<li><span class="part-tick" aria-hidden="true">✓</span><div><strong>${esc(t)}</strong><p>${esc(d)}</p></div></li>`).join('')}</ul></div></details></div>
   <div class="part-products"><div class="part-products-intro"><span class="part-overline">EXAMPLE TOOLS</span><p>These tools show one possible setup. We choose around your needs, budget and existing systems.</p></div><div class="part-product-list" role="list" aria-label="Software examples for ${esc(p.name)}">${p.technologies.map(([key,name,role])=>`<span class="part-product" role="listitem"><span class="part-product-icon${['ollama','keycloak','kafka'].includes(key)?' monochrome-logo':''}"><img src="assets/tech-logos/${key}.svg" alt="" width="40" height="40" loading="lazy"></span><span><strong>${esc(name)}</strong><small>${esc(role)}</small></span></span>`).join('')}</div></div>
   <div class="part-outcome"><div><span class="part-overline">THE BUSINESS BENEFIT</span><strong>${esc(p.outcome)}</strong></div><p>${esc(p.review)}</p></div>
 </article>`).join('');
